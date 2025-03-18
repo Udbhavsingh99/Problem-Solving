@@ -105,5 +105,18 @@ with the correct order/position would be ,
 
 1 4 5 6 8
 
+So, instead of beginning from the 0th index ie. the first value we start from the n-1th index ie. the last value. In this case the value 
+of n is 5 & hence we start from 4th index.
+
+Round 1 : As arr[4] < arr[3] ie. 5<8 , we swap & hence the array that we get is
+
+1 4 6 5 8
+
+now , arr[3] < arr[2] ie. 5<6 , we swap & hence the array that we get is
+
+1 4 5 6 8
+
+The array is now completely sorted
+
 
 */
