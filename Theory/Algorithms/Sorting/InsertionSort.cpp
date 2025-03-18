@@ -90,4 +90,20 @@ now , arr[1] > arr[2] ie. 3>2 , we swap & hence the array that we get is
 1 2 3 4 5
 
 The array is now completely sorted
+
+Lets say we have an array 
+
+1 4 6 8 5
+
+in this case we can observe that the values at arr[0], arr[1], arr[2] & arr[3] ie. first, second, third & fourth values are already
+sorted 
+
+1 4 6 8 | 5
+
+so only the last value ie. arr[4] which is the 5th element in the array with value 5 is not in the correct order/position. The array 
+with the correct order/position would be , 
+
+1 4 5 6 8
+
+
 */
