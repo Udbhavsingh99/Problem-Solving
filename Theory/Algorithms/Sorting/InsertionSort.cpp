@@ -118,5 +118,52 @@ now , arr[3] < arr[2] ie. 5<6 , we swap & hence the array that we get is
 
 The array is now completely sorted
 
+The pseudocode will be following , 
+
+for(j=4; j>=0; j--)
+{
+    if(arr[j]<arr[j-1])
+    {
+        swap(arr[j], arr[j-1]);
+    }
+}
+
+1st iteration - 
+j=4 , j>0 = true
+arr[j]<arr[j-1] ie. arr[4]<arr[3] which is true because arr[4] = 5 & arr[3] = 8 & as 5<8 , we swap the indexes of 5 & 8 ie.
+arr[4] & arr[3]
+j-- ie. j=3
+
+j=3 , j>0 = true
+arr[j]<arr[j-1] ie. arr[3]<arr[2] which is true because arr[3] = 5 & arr[2] = 6 & as 5<6 , we swap the indexes of 5 & 6 ie.
+arr[3] & arr[2]
+j-- ie. j=2
+
+j=2 , j>0 = true
+arr[j]<arr[j-1] ie. arr[2]<arr[1] which is false because arr[2] = 5 & arr[1] = 4 & as 5>4 , we stop because the value at arr[1]
+& arr[0] are going to be smaller than that of arr[2] ie. 5
+
+So the value 5 is at the correct position ie. arr[2] & hence its not required to compare the value at arr[2] ie. 5 with indexes 
+less than 2 because the values are in sorted order & hence any value before arr[1] ie. 4 is bound to be less than it thus making
+it smaller than arr[2] ie. 5 because 5>4. To make the program more efficient , once the value in this case 5 reaches the correct 
+position ie. arr[2] , then we stop the loop execution & break out because there is no point of irrelevant loop traversals.
+Hence when the condition arr[j]<arr[j-1] is false, we break out of the loop because the value has reached its correct position in 
+the array.
+
+for(j=4; j>=0; j--)
+{
+    if(arr[j]<arr[j-1])
+    {
+        swap(arr[j], arr[j-1]);
+    }
+    else
+    {
+        break;
+    }
+}
+
+Now there's a bug in the above code. 
+
+
 
 */
