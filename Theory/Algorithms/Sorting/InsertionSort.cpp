@@ -232,5 +232,58 @@ for(j=n-1; j>0; j--)
 }
 
 We can observe that all elements of the array before the index j are already in sorted state while the element at index j is
-placed at the correct index in this sorted part of array. 
+placed at the correct index in this sorted part of array. Then j increments to the next element in the array & the cycle continues.
+
+For j = 3
+3 4 5 | 1 2 -> 3 4 1 5 2 -> 3 1 4 5 2 -> 1 3 4 5 2 -> 1 3 4 5 | 2
+
+For j = 4
+1 3 4 5 | 2 -> 1 3 4 2 5 -> 1 3 2 4 5 -> 1 2 3 4 5 -> 1 2 3 4 5 |
+
+For an array of size 5 ,  the total number of rounds/iterations = 4 & hence for an array of size n , the total number of rounds/
+iterations = n-1
+
+Now if we look at the first example of array 
+
+7 4 2 3 5
+
+Round 1 : Now in round 1 , the value at index 0 ie. the first value is 7 & the value at index 1 ie. the second value is 4. Now as 7>4 ie. 
+arr[i]>arr[i+1] , then we swap the values at these indexes ie. we swap the first value ie. value at index 0 with the second value ie. value at 
+index 1.
+Hence after Round 1 the array is 
+
+4 7 2 3 5
+
+
+
+Round 2 : Now in round 2 , the values at index 0  & index 1 ie. the first & second values of the array are now sorted. ie. 4 7 | 2 3 5
+The value at index 1 ie. the second value is 7 & the value at index 2 ie. the third value is 2. Now as 7>2 ie. arr[i]>arr[i+1] , then we swap 
+the values at these indexes ie. we swap the second value ie. value at index 1 with the third value ie. value at index 2. Hence we get the array 
+
+4 2 7 3 5 
+
+Now the value at index 0 ie. the first value is 4 & the value at index 1 ie. the second value is 2. Now as 4>2 ie. arr[i]>arr[i+1] , then we swap
+the values at these indexes ie. we swap the first value ie. value at index 0 with the second value ie. value at index 1. Hence we get the array 
+
+2 4 7 3 5
+
+Round 3 : Now in round 3 , the values at index 0, 1 & 2 ie. the first,second & third values of the array are now sorted. ie. 2 4 7| 3 5
+The value at index 2 ie. the third value is 7 & the value at index 3 ie. the fourth value is 3. Now as 7>3 ie. arr[i]>arr[i+1] , then we swap 
+the values at these indexes ie. we swap the third value ie. value at index 2 with the fourth value ie. value at index 3. Hence we get the array
+
+2 4 3 7 5
+
+Now the values at index 1 ie. the second value is 4 & the value at index 2 ie. the third value is 3. Now as 4>3 ie. arr[i]>arr[i+1] , then we swap
+the values at these indexes ie. we swap the second value ie. value at index 1 with the third value ie. value at index 2. Hence we get the array 
+
+2 3 4 7 5
+
+Round 4 : Now in round 4 , the values at index 0 , 1 , 2 & 3 ie. the first,second,third & fourth values of the array are now sorted ie. 2 3 4 7 | 5
+The value at index 3 ie. the fourth value is 7 & the value at index 4 ie. the fifth value is 5. Now as 7>5 ie. arr[i]>arr[i+1] , then we swap 
+the values at these indexes ie. we swap the fourth value ie. value at index 3 with the fifth value ie. value at index 4. Hence we get the array
+
+2 3 4 5 7 
+
+The array is now completely sorted
+
 */
