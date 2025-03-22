@@ -134,11 +134,13 @@ arr[j]<arr[j-1] ie. arr[4]<arr[3] which is true because arr[4] = 5 & arr[3] = 8 
 arr[4] & arr[3]
 j-- ie. j=3
 
+2nd iteration - 
 j=3 , j>0 = true
 arr[j]<arr[j-1] ie. arr[3]<arr[2] which is true because arr[3] = 5 & arr[2] = 6 & as 5<6 , we swap the indexes of 5 & 6 ie.
 arr[3] & arr[2]
 j-- ie. j=2
 
+3rd iteration - 
 j=2 , j>0 = true
 arr[j]<arr[j-1] ie. arr[2]<arr[1] which is false because arr[2] = 5 & arr[1] = 4 & as 5>4 , we stop because the value at arr[1]
 & arr[0] are going to be smaller than that of arr[2] ie. 5
@@ -162,8 +164,73 @@ for(j=4; j>=0; j--)
     }
 }
 
-Now there's a bug in the above code. 
+Now there's a bug in the above code.  
+Lets say we have an array , 
 
+1 4 5 6 0
 
+1st iteration - 
+j = 4; j>=0 = true 
+arr[j]<arr[j-1] ie. arr[4]<arr[3] which is true because arr[4] = 0 & arr[3] = 6 & as 6>0 , we swap the indexes of 0 & 6 ie. 
+arr[4] & arr[3] 
+j-- ie. j=3
 
+1 4 5 0 6
+
+2nd iteration - 
+j = 3; j>=0 = true 
+arr[j]<arr[j-1] ie. arr[3]<arr[2] which is true because arr[3] = 0 & arr[2] = 5 & as 5>0 , we swap the indexes of 0 & 5 ie. 
+arr[3] & arr[2] 
+j-- ie. j=2
+
+1 4 0 5 6
+
+3rd iteration - 
+j = 2; j>=0 = true 
+arr[j]<arr[j-1] ie. arr[2]<arr[1] which is true because arr[2] = 0 & arr[1] = 4 & as 4>0 , we swap the indexes of 0 & 4 ie. 
+arr[2] & arr[1] 
+j-- ie. j=1
+
+1 0 4 5 6
+
+4th iteration - 
+j = 1; j>=0 = true 
+arr[j]<arr[j-1] ie. arr[1]<arr[0] which is true because arr[1] = 0 & arr[0] = 1 & as 1>0 , we swap the indexes of 0 & 1 ie. 
+arr[1] & arr[0] 
+j-- ie. j=0
+
+5th iteration - 
+j = 0; j>=0 = true 
+arr[j]<arr[j-1] ie. arr[0]<arr[-1] this situation is false because there is no value at index -1 in our array because index
+-1 doesn't exist in our array & hence this is the bug.
+
+This bug can be resolved by changing the condition from j>=0 to j>0 
+
+for(j=4; j>0; j--)
+{
+    if(arr[j]<arr[j-1])
+    {
+        swap(arr[j], arr[j-1]);
+    }
+    else
+    {
+        break;
+    }
+}
+
+Now for an array of size n we start with the position of variable j from j = n-1 
+for(j=n-1; j>0; j--)
+{
+    if(arr[j]<arr[j-1])
+    {
+        swap(arr[j], arr[j-1]);
+    }
+    else
+    {
+        break;
+    }
+}
+
+We can observe that all elements of the array before the index j are already in sorted state while the element at index j is
+placed at the correct index in this sorted part of array. 
 */
