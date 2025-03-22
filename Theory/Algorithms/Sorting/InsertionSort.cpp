@@ -254,7 +254,10 @@ Hence after Round 1 the array is
 
 4 7 2 3 5
 
+In Round 1 the value of loop variable is 1 & hence the values are compared from index 1 to index 0 
 
+7 4 | 2 3 5 -> 4 7 | 2 3 5
+|_|
 
 Round 2 : Now in round 2 , the values at index 0  & index 1 ie. the first & second values of the array are now sorted. ie. 4 7 | 2 3 5
 The value at index 1 ie. the second value is 7 & the value at index 2 ie. the third value is 2. Now as 7>2 ie. arr[i]>arr[i+1] , then we swap 
@@ -267,6 +270,11 @@ the values at these indexes ie. we swap the first value ie. value at index 0 wit
 
 2 4 7 3 5
 
+In Round 2 the value of loop variable is 2 & hence the values are compared from index 2 to index 0 
+
+4 7 2 | 3 5 -> 4 2 7 | 3 5 -> 2 4 7 | 3 5
+  |_|          |_|
+
 Round 3 : Now in round 3 , the values at index 0, 1 & 2 ie. the first,second & third values of the array are now sorted. ie. 2 4 7| 3 5
 The value at index 2 ie. the third value is 7 & the value at index 3 ie. the fourth value is 3. Now as 7>3 ie. arr[i]>arr[i+1] , then we swap 
 the values at these indexes ie. we swap the third value ie. value at index 2 with the fourth value ie. value at index 3. Hence we get the array
@@ -278,12 +286,21 @@ the values at these indexes ie. we swap the second value ie. value at index 1 wi
 
 2 3 4 7 5
 
+In Round 3 the value of loop variable is 3 & hence the values are compared from index 3 to index 0 
+
+2 4 7 3 | 5 -> 2 4 3 7 | 5 -> 2 3 4 7 | 5
+    |_|          |_|          |_|
+
 Round 4 : Now in round 4 , the values at index 0 , 1 , 2 & 3 ie. the first,second,third & fourth values of the array are now sorted ie. 2 3 4 7 | 5
 The value at index 3 ie. the fourth value is 7 & the value at index 4 ie. the fifth value is 5. Now as 7>5 ie. arr[i]>arr[i+1] , then we swap 
 the values at these indexes ie. we swap the fourth value ie. value at index 3 with the fifth value ie. value at index 4. Hence we get the array
 
 2 3 4 5 7 
 
+In Round 4 the value of loop variable is 4 & hence the values are compared from index 4 to index 0 
+
+2 3 4 7 5 | -> 2 3 4 5 7 |
+      |_|          
 The array is now completely sorted
 
 */
