@@ -101,13 +101,13 @@ class Node
         }    
 };
 
-int TotalSum(Node* root, int& sum)
+int TotalSum(Node* root)
 {
     if(root == NULL)
     {
-        return;
+        return 0;
     }
 
-    int sum = root->data + TotalSum(root->left, sum) + TotalSum(root->right, sum);
+    int sum = root->data + TotalSum(root->left) + TotalSum(root->right);
     return sum;
 }
