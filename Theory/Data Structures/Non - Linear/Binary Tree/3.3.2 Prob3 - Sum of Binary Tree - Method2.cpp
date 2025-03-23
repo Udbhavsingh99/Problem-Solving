@@ -79,6 +79,8 @@ The recursive traversal for both the right & left subtree for the node with valu
 is node with value 3 which is the root node.
 
 Hence the sum of values of all nodes in the binary tree is 45
+
+The base case is that if there are no child nodes present we return 0
 */
 
 #include<iostream>
