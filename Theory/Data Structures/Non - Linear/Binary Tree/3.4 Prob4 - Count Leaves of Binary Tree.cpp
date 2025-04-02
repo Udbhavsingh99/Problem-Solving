@@ -35,7 +35,7 @@ class Node
 int countLeaf(Node* root)
 {
     int count;
-    if(root->left && root->right == NULL)
+    if(!root->left && !root->right == NULL)
     {
         count++;
         return;
