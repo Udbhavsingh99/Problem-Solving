@@ -7,7 +7,7 @@ Leaf node - A node in a binary tree that doesn't have any child node is called a
         8       9                 10      11
                                 12           13
 
-The lead nodes in above binary tree are nodes with value 8, 9, 5, 12, 13, 7
+The leaf nodes in above binary tree are nodes with value 8, 9, 5, 12, 13, 7
 Hence the total number of leaf nodes in our binary tree is 6
 
 
