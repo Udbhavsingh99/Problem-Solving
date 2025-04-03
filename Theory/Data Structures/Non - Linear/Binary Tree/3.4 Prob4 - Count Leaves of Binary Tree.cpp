@@ -55,7 +55,7 @@ Node with value 5 has no right child node ie. no right subtree , then this impli
 Now the left & right subtree traversal for the node with value 2 is complete. Hence we return to the parent node of node with value 2 ie, node with value 1 with the variable count ie. the number
 of leaf nodes in the subtree.
 
-Now the left sutbree traversal for node with value 1 ie. the root node is complete & hence we traverse the right subtree for this node with value 1.We make a recursive call to get the total number of 
+Now the left subtree traversal for node with value 1 ie. the root node is complete & hence we traverse the right subtree for this node with value 1.We make a recursive call to get the total number of 
 leaf nodes in the right subtree of node with value 1.
 
 We go to the node with value 3 which is the right child of node with value 1. We check whether this node with value 3 is a leaf node or not ie. whether this node with value 3 
@@ -79,6 +79,41 @@ Node with value 12 has no right child node ie. no right subtree , then this impl
 Now the left subtree traversal ie. left child node traversal for node with value 10 is complete & so we traverse the right subtree of node with value 10 ie. we traverse the right child node of
 node with value 10. As the node with value 10 has no right child node ie. the node with value 10 has no right subtree we return to the parent node of node with value 10 ie. node with value 6
 with the variable count.
+
+Now the left subtree traversal ie. left child node traversal for node with value 6 is complete & so we traverse the right subtree of node with value 6 ie. we traverse the right child node of
+node with value 6. We make a recursive call to get the total number of leaf nodes in the right subtree of node with value 6.
+
+We go to the node with value 11 which is the right child node of node with value 6. We check whether this node with value 11 is a leaf node or not ie. whether this node with value 11 
+has a left or right child node or not. Now as the node with value 11 has no left child node ie. no left subtree , we check for the right child node ie. right subtree for this node with value 11.
+Now as the node with value 11 has a right child node , the value of count variable is not incremented because node with value 11 is not a leaf node. We then make a recursive call to get the count/number 
+of total leaf nodes present in the right subtree of node with value 11.
+
+We go to the node with value 13 which is the right child node of node with value 11. We check whether this node with value 13 is a leaf node or not ie. whether this node with value 13 
+has a left or right child node or not. Now as node with value 13 has no left child node ie. no left subtree , we check for the right child node ie. right subtree for this node with value 13. 
+Node with value 13 has no right child node ie. no right subtree , then this implies that node with value 13 has neither a left child node nor a right child node & hence this node with value 
+13 is a leaf node & so we increment the value of count variable by 1 ie. count = 5. As node with value 13 has no child nodes & is a leaf node , we return to the parent node of node with value
+13 ie. node with value 11 with the value of count variable.
+
+Now the left & right subtree traversal for the node with value 11 is complete. Hence we return to the parent node of node with value 11 ie, node with value 6 with the variable count ie. the number
+of leaf nodes in the subtree.
+
+Now the left & right subtree traversal for the node with value 6 is complete. Hence we return to the parent node of node with value 6 ie, node with value 3 with the variable count ie. the number
+of leaf nodes in the subtree.
+
+Now the left subtree traversal ie. left child node traversal for node with value 3 is complete & so we traverse the right subtree of node with value 3 ie. we traverse the right child node of
+node with value 3. We make a recursive call to get the total number of leaf nodes in the right subtree of node with value 3.
+
+We go to the node with value 7 which is the right child node of node with value 3. We check whether this node with value 7 is a leaf node or not ie. whether this node with value 7 
+has a left or right child node or not. Now as node with value 7 has no left child node ie. no left subtree , we check for the right child node ie. right subtree for this node with value 7. 
+Node with value 7 has no right child node ie. no right subtree , then this implies that node with value 7 has neither a left child node nor a right child node & hence this node with value 
+7 is a leaf node & so we increment the value of count variable by 1 ie. count = 6. As node with value 7 has no child nodes & is a leaf node , we return to the parent node of node with value
+7 ie. node with value 3 with the value of count variable.
+
+Now the left & right subtree traversal for the node with value 3 is complete. Hence we return to the parent node of node with value 3 ie, node with value 1 ie. the root node with the variable count ie. the number
+of leaf nodes in the subtree.
+
+Now the left & right subtree traversal for the node with value 1 ie. the root node is complete & hence we have completed traversing the entire tree. The total count of leaf nodes present in our 
+tree is 6.
 
 
 */
