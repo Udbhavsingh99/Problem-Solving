@@ -115,7 +115,29 @@ of leaf nodes in the subtree.
 Now the left & right subtree traversal for the node with value 1 ie. the root node is complete & hence we have completed traversing the entire tree. The total count of leaf nodes present in our 
 tree is 6.
 
+For each node in our tree , we check whether the node is leaf node or not ie. whether the node has a child (either left child node or right child node) or not. 
+If the node has no child ie. the node has neither a left not a right child node , then this node is a leaf node & hence we increment the value of count & return as leaf node is the last node.
+If the node has a child ie. the node has either a left or right child node, then this node is not a leaf node & hence we continue traversing. 
+In order to traverse the tree we first traverse the left subtree of a node by making a recursive call to traverse the left subtree.
+Then we traverse the right subtree of a node by making a recursive call to traverse the right subtree.
+The base case is that if the root is null , then we return.
 
+void countLeaf(Node* root, int& count)
+{
+    if(root == NULL)
+    {
+        return;
+    }
+
+    if(!root->left && !root->right)
+    {
+        count++;
+        return;
+    }
+
+    countLeaf(root->left, count);
+    countLeaf(root->right, count);
+}
 */
 
 #include<iostream>
