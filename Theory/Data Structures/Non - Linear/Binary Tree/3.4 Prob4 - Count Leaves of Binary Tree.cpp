@@ -138,6 +138,18 @@ void countLeaf(Node* root, int& count)
     countLeaf(root->left, count);
     countLeaf(root->right, count);
 }
+    
+The second method is using recursive calls to the left & the right subtree & adding the total count variable value returned from each of the calls. 
+
+So we start at the root node ie. node with value 1. Now this node has both a left child node as well as a right child node, this implies that this node with value 1
+is not a leaf node as it has atleast one child node ie. either the left or right child node.
+
+So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 1 ie. the root node & add it to the recursive call to 
+get the total number of leaf nodes in the right subtree of node with value 1 ie. the root node.
+
+Now we traverse the left sutbree ie. the left child node of node with value 1 which is the node with value 2
+
+
 */
 
 #include<iostream>
