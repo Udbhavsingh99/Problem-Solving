@@ -181,6 +181,21 @@ Now the recursive calls for traversing the left & right subtree of node with val
 
 Now the recursive call to traverse the left subtree of node with value 1 ie. the root node is complete. Now we make a recursive call to traverse the right subtrree of node with value 1.
 
+Now we traverse the right subtree ie. the right child node of node with value 1 ie. the root node which is the node with value 3. Now this node has both a left child node as well as a right child node, this implies that this node with value 3
+is not a leaf node as it has atleast one child node ie. either the left or right child node.
+
+So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 3 &  add it to the recursive call to 
+get the total number of leaf nodes in the right subtree of node with value 3.
+
+Now we traverse the left subtree ie. the left child node of node with value 3 which is the node with value 6. Now this node has both a left child node as well as a right child node, this implies that this node with value 6
+is not a leaf node as it has atleast one child node ie. either the left or right child node.
+
+So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 6 & add it to the recursive call to get the total number of 
+leaf nodes in the right subtree of node with value 6.
+
+Now we traverse the left subtree ie. the left child node of node with value 6 which is the node with value 10. Now this node with value 10 has a left child node & no right child node , this implies that this node with value 10 is not a leaf node
+as it has atleast one child node ie. either the left or right child node. 
+
 
 */
 
@@ -215,5 +230,4 @@ int countLeaf(Node* root)
     countLeaf(root->right);
 
     return count;
-
 }
