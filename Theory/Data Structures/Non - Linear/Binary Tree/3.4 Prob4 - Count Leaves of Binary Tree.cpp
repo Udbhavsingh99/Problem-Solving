@@ -196,7 +196,13 @@ leaf nodes in the right subtree of node with value 6.
 Now we traverse the left subtree ie. the left child node of node with value 6 which is the node with value 10. Now this node with value 10 has a left child node & no right child node , this implies that this node with value 10 is not a leaf node
 as it has atleast one child node ie. either the left or right child node. 
 
+So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 10 & add it to the recursive call to get the total number of leaf nodes in the right subtree of node with value 10.
 
+Now we traverse the left subtree ie. the left child node of node with value 10 which is the node with value 12. Now this node with value 12 has neither a left child node nor a right child node , this implies that this node with value 12
+is a leaf node as it has no child node. Hence we increment the value of count variable this count = 4. Now this is a leaf node & hence has no child , we return to the parent node of this right node ie. we return to the parent
+node of node with value 12 which in this case is node with value 10.
+
+Now the 
 */
 
 #include<iostream>
