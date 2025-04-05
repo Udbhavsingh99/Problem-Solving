@@ -147,7 +147,39 @@ is not a leaf node as it has atleast one child node ie. either the left or right
 So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 1 ie. the root node & add it to the recursive call to 
 get the total number of leaf nodes in the right subtree of node with value 1 ie. the root node.
 
-Now we traverse the left sutbree ie. the left child node of node with value 1 which is the node with value 2
+Now we traverse the left sutbree ie. the left child node of node with value 1 which is the node with value 2. Now this node has both a left child node as well as a right child node, this implies that this node with value 2
+is not a leaf node as it has atleast one child node ie. either the left or right child node.
+
+So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 2 &  add it to the recursive call to 
+get the total number of leaf nodes in the right subtree of node with value 2. 
+
+Now we traverse the left sutbree ie. the left child node of node with value 2 which is the node with value 4. Now this node has both a left child node as well as a right child node, this implies that this node with value 4
+is not a leaf node as it has atleast one child node ie. either the left or right child node.
+
+So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 4 &  add it to the recursive call to 
+get the total number of leaf nodes in the right subtree of node with value 4. 
+
+Now we traverse the left subtree ie. the left child node of node with value 4 which is the node with value 8. Now this node with value 8 has neither a left child node nor a right child node , this implies that this node with value 8 
+is  a leaf node as it has no child node. Hence we increment the value of count variable thus count = 1. Now as this is a leaf node & hence has no child , we return to the parent node of this left node ie. we return to the parent
+node of node with value 8 which in this case is node with value 4. 
+
+Now the recursive call to traverse the left subtree of node with value 4 is complete. Now we make a recursive call to traverse the right subtree of node with value 4.
+
+Now we traverse the right subtree ie. the right child node of node with value 4 which is the node with value 9. Now this node with value 9 has neither a left child node nor a right child node , this implies that this node with value 9
+is a leaf node as it has no child node. Hence we increment the value of count variable this count = 2. Now this is a leaf node & hence has no child , we return to the parent node of this right node ie. we return to the parent
+node of node with value 9 which in this case is node with value 4.
+
+Now the recursive calls for traversing the left & right subtree of node with value 4 is complete , hence we return to the parent node of node with value 4 ie. node with value 2.
+
+Now the recursive call to traverse the left subtree of node with value 2 is complete. Now we make a recursive call to traverse the right subtree of node with value 2.
+
+Now we traverse the right subtree ie, the right child node of node with value 2 which is the node with value 5. Now this node with value 5 has neither a left child node nor a right child node , this implies that this node with value 5
+is a leaf node as it has no child node. Hence we increment the value of count variable this count = 3. Now this is a leaf node & hence has no child , we return to the parent node of this right node ie. we return to the parent
+node of node with value 5 which in this case is node with value 2.
+
+Now the recursive calls for traversing the left & right subtree of node with value 2 is complete , hence we return to the parent node of node with value 2 ie. node with value 1 which is the root node.
+
+Now the recursive call to traverse the left subtree of node with value 1 ie. the root node is complete. Now we make a recursive call to traverse the right subtrree of node with value 1.
 
 
 */
