@@ -202,7 +202,9 @@ Now we traverse the left subtree ie. the left child node of node with value 10 w
 is a leaf node as it has no child node. Hence we increment the value of count variable this count = 4. Now this is a leaf node & hence has no child , we return to the parent node of this right node ie. we return to the parent
 node of node with value 12 which in this case is node with value 10.
 
-Now the 
+Now the recursive call to traverse the left subtree of node with value 10 is complete. Now we make a recursive call to traverse the right subtrree of node with value 10.
+
+The node with value 10 has no right child node ie. no 
 */
 
 #include<iostream>
