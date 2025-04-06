@@ -147,13 +147,13 @@ is not a leaf node as it has atleast one child node ie. either the left or right
 So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 1 ie. the root node & add it to the recursive call to 
 get the total number of leaf nodes in the right subtree of node with value 1 ie. the root node.
 
-Now we traverse the left sutbree ie. the left child node of node with value 1 which is the node with value 2. Now this node has both a left child node as well as a right child node, this implies that this node with value 2
+Now we traverse the left subtree ie. the left child node of node with value 1 which is the node with value 2. Now this node has both a left child node as well as a right child node, this implies that this node with value 2
 is not a leaf node as it has atleast one child node ie. either the left or right child node.
 
 So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 2 &  add it to the recursive call to 
 get the total number of leaf nodes in the right subtree of node with value 2. 
 
-Now we traverse the left sutbree ie. the left child node of node with value 2 which is the node with value 4. Now this node has both a left child node as well as a right child node, this implies that this node with value 4
+Now we traverse the left subtree ie. the left child node of node with value 2 which is the node with value 4. Now this node has both a left child node as well as a right child node, this implies that this node with value 4
 is not a leaf node as it has atleast one child node ie. either the left or right child node.
 
 So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 4 &  add it to the recursive call to 
@@ -179,7 +179,7 @@ node of node with value 5 which in this case is node with value 2.
 
 Now the recursive calls for traversing the left & right subtree of node with value 2 is complete , hence we return to the parent node of node with value 2 ie. node with value 1 which is the root node.
 
-Now the recursive call to traverse the left subtree of node with value 1 ie. the root node is complete. Now we make a recursive call to traverse the right subtrree of node with value 1.
+Now the recursive call to traverse the left subtree of node with value 1 ie. the root node is complete. Now we make a recursive call to traverse the right subtree of node with value 1.
 
 Now we traverse the right subtree ie. the right child node of node with value 1 ie. the root node which is the node with value 3. Now this node has both a left child node as well as a right child node, this implies that this node with value 3
 is not a leaf node as it has atleast one child node ie. either the left or right child node.
@@ -199,12 +199,42 @@ as it has atleast one child node ie. either the left or right child node.
 So now we make a recursive call to get the total number of leaf nodes in the left subtree of this node with value 10 & add it to the recursive call to get the total number of leaf nodes in the right subtree of node with value 10.
 
 Now we traverse the left subtree ie. the left child node of node with value 10 which is the node with value 12. Now this node with value 12 has neither a left child node nor a right child node , this implies that this node with value 12
-is a leaf node as it has no child node. Hence we increment the value of count variable this count = 4. Now this is a leaf node & hence has no child , we return to the parent node of this right node ie. we return to the parent
+is a leaf node as it has no child node. Hence we increment the value of count variable this count = 4. Now this is a leaf node & hence has no child , we return to the parent node of this left node ie. we return to the parent
 node of node with value 12 which in this case is node with value 10.
 
-Now the recursive call to traverse the left subtree of node with value 10 is complete. Now we make a recursive call to traverse the right subtrree of node with value 10.
+Now the recursive call to traverse the left subtree of node with value 10 is complete. Now we make a recursive call to traverse the right subtree of node with value 10.
 
-The node with value 10 has no right child node ie. no 
+The node with value 10 has no right child node ie. the node with value 10 has no right subtree. 
+
+Now the recursive calls for traversing the left & right subtree of node with value 10 is complete , hence we return to the parent node of node with value 10 ie. node with value 6
+
+Now the recursive call to traverse the left subtree of node with value 6 is complete. Now we make a recursive call to traverse the right subtree of node with value 6.
+
+Now we traverse the right subtree ie. the right child node of node with value 6 which is the node with value 11. Now this node with value 11 has no left child node but has a right child node , this implies that this node with value 11 is not a leaf node
+as it has atleast one child node ie. either the left or right child node. 
+
+Now as the node with value 11 has no left subtree ie. the node with value 11 has no left child node , we traverse the right subtree ie. the right child node of node with value 11.
+
+Now we traverse the right subtree ie. the right child node of node with value 11 which is the node with value 13. Now this node with value 13 has neither a left child node nor a right child node , this implies that this node with value 13 
+is a leaf node as it has no child node. Hence we increment the value of count variable ie. count = 5. Now this is a leaf node & hence has no child , we return to the parent node of this right node ie. we return to the parent
+node of node with value 13 which in this case is node with value 11.
+
+Now the recursive calls for traversing the left & right subtree of node with value 11 is complete , hence we return to the parent node of node with value 11 ie. node with value 6 
+
+Now the recursive calls for traversing the left & right subtree of node with value 6 is complete , hence we return to the parent node of node with value 6 ie. node with value 3
+
+Now the recursive call for traversing the left subtree of node with value 3 is complete. Now we make a recursive call to traverse the right subtree of node with value 3.
+
+Now we traverse the right subtree ie. the right child node of node with value 3 which is the node with value 7. Now this node with value 7 has neither a left child node nor a right child node , this implies that this node with value 7 
+is a leaf node as it has no child node. Hence we increment the value of count variable ie. count = 6. Now this is a leaf node & hence has no child , we return to the parent node of this right node ie. we return to the parent
+node of node with value 7 which in this case is node with value 3.
+
+Now the recursive calls for traversing the left & right subtree of node with value 3 is complete , hence we return to the parent node of node with value 3 ie. node with value 1 ie. the root node.
+
+Now the recursive calls for traversing the left & right subtree of node with value 1 ie. the root node is complete, hence the tree traversal is complete & the value of count ie. 6 is the total number of 
+leaf nodes in our tree.
+
+
 */
 
 #include<iostream>
