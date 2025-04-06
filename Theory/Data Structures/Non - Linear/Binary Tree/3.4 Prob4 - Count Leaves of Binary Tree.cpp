@@ -234,7 +234,20 @@ Now the recursive calls for traversing the left & right subtree of node with val
 Now the recursive calls for traversing the left & right subtree of node with value 1 ie. the root node is complete, hence the tree traversal is complete & the value of count ie. 6 is the total number of 
 leaf nodes in our tree.
 
+int countLeaf(Node* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
 
+    if(!root->left && !root->right)
+    {
+        return 1;
+    }
+
+    return(countLeaf(root->left) + countLeaf(root->right));
+}
 */
 
 #include<iostream>
@@ -268,4 +281,19 @@ int countLeaf(Node* root)
     countLeaf(root->right);
 
     return count;
+}
+
+int leafCount(Node* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+
+    if(!root->left && !root->right)
+    {
+        return 1;
+    }
+
+    return(leafCount(root->left) + leafCount(root->right));
 }
