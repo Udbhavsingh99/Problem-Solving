@@ -20,9 +20,64 @@ tree is the distance ie. number of nodes between the root node & the leaf node f
 We start from the root node & traverse to the leaf node & while doing so keep on counting the number of nodes between the root node & the leaf node 
 we are traversing to. We stop only once we reach a leaf node.
 
+Now we add 1 as the height of the present node. Then we need to find the largest possible height in the left subtree & the largest possible height in the right subtree.
+Now the maximum of these two heights ie. the maximum of the largest possible height in the left subtree & the right subtree will be added to the 1 ie. the height of the present 
+node.
+
+Lets assume we have a tree
+
+                                                    1
+                                        2                       3
+                                4           5               6           7  
+                            8            9              10     11          12
+                                            13                                  14
+                                                                              15
+                                
+Now we start with the root node ie. node with value 1. We then traverse the left subtree of this root node ie. node with value 1 to find the largest possible height in the left subtree. 
+We then traverse the right subtree of this root node ie. node with value 1 to find the largest possible height in the right subtree. 
+
+Now we know that for the left subtree of node with value 1 , the largest possible height is 4 for the nodes 1-2-5-9-13 .
+Now for the right subtree of node with value 1 , the largest possible height is 6 for the nodes 1-3-7-12-14-15
+
+
 1:32:50
 
 
 
 
 */
+
+#include<iostream>
+
+using namespace std;
+
+class Node 
+{
+    public:
+        int data;
+        Node* left;
+        Node* right;
+
+    Node(int value)
+    {
+        data = value;
+        right = left = NULL;
+    }
+};
+
+int treeHeight(Node* root)
+{
+    if(root == NULL)
+    {
+        return;
+    }
+
+    if(treeHeight(root->left) > treeHeight(root->right))
+    {
+        return 1+treeHeight(root->left);
+    }
+    else
+    {
+        return 1+treeHeight(root->right);
+    }
+}
