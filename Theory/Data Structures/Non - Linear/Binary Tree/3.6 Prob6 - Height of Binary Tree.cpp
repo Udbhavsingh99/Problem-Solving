@@ -39,7 +39,7 @@ We then traverse the right subtree of this root node ie. node with value 1 to fi
 Now we know that for the left subtree of node with value 1 , the largest possible height is 4 for the nodes 1-2-5-9-13 .
 Now for the right subtree of node with value 1 , the largest possible height is 6 for the nodes 1-3-7-12-14-15
 
-
+Basically we add 1 to the largest/maximum possible height in both the subtrees of the present node. 
 1:32:50
 
 

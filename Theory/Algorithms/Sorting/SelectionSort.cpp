@@ -143,6 +143,7 @@ Now we put the above entire code in a loop that runs from 0 to n-2 ie. 0 to i<n-
 Method 2 -
 In our array , the first swapping occurs between the smallest number in the array & value at index 1 , the second swapping operation occurs 
 
+
 */
 
 #include<iostream>
