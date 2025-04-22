@@ -37,7 +37,23 @@ Flow :
    own/automatically. 
    So we are not deliberately decreasing the size of the input, rather the input size is decreasing automatically as we keep on making 
    decisions.
+   
+2> Recursion - Decision Space
+   We use recursion when we want to take some decision/ we want some decision space. This basically works as an identification. So basically , 
+   in recursion we take some decisions. If we are provided some problem statement & we want to identify whether its recursive or not, then in that
+   case in the problems we will be provided with choices & decisions. In the problem statement we'd be provided with some choices & based on these 
+   choices that are provided to us, we can take some decisions. 
 
+   If we want to represent some decision space, then recursion is a good choice to solve that problem.
+
+3> Recursive tree - Soul of Recursion
+   Example : Subset problem 
+   In this problem we are provided a string & we need to represent all the subsets possible from the provided string. Lets say the string that we have
+   is abc , then the possible subsets from this string abc are 
+   " ", "a", "b", "c", "ab", "bc", "ac" , "abc"
+   so, we have subsets of length 0 , 1 , 2 & 3. 
+
+   
 
 
          
