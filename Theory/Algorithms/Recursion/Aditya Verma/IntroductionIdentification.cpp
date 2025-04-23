@@ -38,7 +38,13 @@ Flow :
    So we are not deliberately decreasing the size of the input, rather the input size is decreasing automatically as we keep on making 
    decisions.
 
+   We take decisions & this is our primary task/goal. On the basis of this decision , our initial input gets transformed into
+   smaller input automatically & this is our secondary task/goal. Our main focus is to take decisions, the input getting smaller is automatic
+   & is a byproduct of the decision that we made/make & hence shouldn't be our main focus. 
 
-
+   Decision making should be our primary goal & smaller input is an automatic consequence of this primary goal. 
          
+2> Recursion - Decision space
+   We use recursion when we want a decision space. This will work as an identification. 
+
     */
