@@ -37,14 +37,40 @@ Flow :
    own/automatically. 
    So we are not deliberately decreasing the size of the input, rather the input size is decreasing automatically as we keep on making 
    decisions.
+   
+2> Recursion - Decision Space
+   We use recursion when we want to take some decision/ we want some decision space. This basically works as an identification. So basically , 
+   in recursion we take some decisions. If we are provided some problem statement & we want to identify whether its recursive or not, then in that
+   case in the problems we will be provided with choices & decisions. In the problem statement we'd be provided with some choices & based on these 
+   choices that are provided to us, we can take some decisions. 
 
+<<<<<<< HEAD
    We take decisions & this is our primary task/goal. On the basis of this decision , our initial input gets transformed into
    smaller input automatically & this is our secondary task/goal. Our main focus is to take decisions, the input getting smaller is automatic
    & is a byproduct of the decision that we made/make & hence shouldn't be our main focus. 
+=======
+   If we want to represent some decision space, then recursion is a good choice to solve that problem.
+
+3> Recursive tree - Soul of Recursion
+   Example : Subset problem 
+   In this problem we are provided a string & we need to represent all the subsets possible from the provided string. Lets say the string that we have
+   is abc , then the possible subsets from this string abc are 
+   " ", "a", "b", "c", "ab", "bc", "ac" , "abc"
+   so, we have subsets of length 0 , 1 , 2 & 3. 
+
+   From the string abc that is provided to us. All the subsets possible from this string "abc" provided to us are , 
+   9:58
+
+   
+>>>>>>> 84b93753192a5855be6794304cae6cee23afacca
 
    Decision making should be our primary goal & smaller input is an automatic consequence of this primary goal. 
          
+<<<<<<< HEAD
 2> Recursion - Decision space
    We use recursion when we want a decision space. This will work as an identification. 
 
     */
+=======
+    */
+>>>>>>> 84b93753192a5855be6794304cae6cee23afacca
