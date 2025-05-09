@@ -54,7 +54,29 @@ Flow :
    so, we have subsets of length 0 , 1 , 2 & 3. 
 
    From the string abc that is provided to us. All the subsets possible from this string "abc" provided to us are , 
-   9:58
+               a        b        c
+   " "         N        N        N
+    a          Y        N        N
+    b          N        Y        N
+    c          N        N        Y
+   ab          Y        Y        N
+   bc          N        Y        Y
+   ac          Y        N        Y
+   abc         Y        Y        Y
+
+   Now for any recursive problem we are given choices & we need to take some decisions ie. choice + decision. 
+   Now we needed to build a null subset ie. empty string.
+   For choice , we have 2 choices for each character in the string abc ie. we want to create subsets of this string abc 
+   & so we have the choice of including the character a or not including the character a , similary including the  
+   character b or not including the character b & including the character c or not including the character c. 
+
+                              a        b         c
+                            /  \     /  \       / \
+                           Y   N    Y   N      Y  N
+
+   The decisions that we take on these choices ie. to include or not to include a particular character from the string, 
+   are what leads to the creation of subset. 
+ 
 
    
 
