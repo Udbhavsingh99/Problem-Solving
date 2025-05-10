@@ -44,11 +44,9 @@ Flow :
    case in the problems we will be provided with choices & decisions. In the problem statement we'd be provided with some choices & based on these 
    choices that are provided to us, we can take some decisions. 
 
-<<<<<<< HEAD
    We take decisions & this is our primary task/goal. On the basis of this decision , our initial input gets transformed into
    smaller input automatically & this is our secondary task/goal. Our main focus is to take decisions, the input getting smaller is automatic
    & is a byproduct of the decision that we made/make & hence shouldn't be our main focus. 
-=======
    If we want to represent some decision space, then recursion is a good choice to solve that problem.
 
 3> Recursive tree - Soul of Recursion
@@ -62,14 +60,10 @@ Flow :
    9:58
 
    
->>>>>>> 84b93753192a5855be6794304cae6cee23afacca
 
    Decision making should be our primary goal & smaller input is an automatic consequence of this primary goal. 
          
-<<<<<<< HEAD
 2> Recursion - Decision space
    We use recursion when we want a decision space. This will work as an identification. 
 
-=======
     */
->>>>>>> 84b93753192a5855be6794304cae6cee23afacca
