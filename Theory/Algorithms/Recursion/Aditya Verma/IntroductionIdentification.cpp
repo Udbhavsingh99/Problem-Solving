@@ -76,8 +76,10 @@ Flow :
 
    The decisions that we take on these choices ie. to include or not to include a particular character from the string, 
    are what leads to the creation of subset. 
+   For empty string ie. " " , for each character in the string abc , we have the choice to either include or not include the 
+   character a 
  
-
+   
    
 
 
