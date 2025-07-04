@@ -79,13 +79,5 @@ Flow :
 
    The decisions that we take on these choices ie. to include or not to include a particular character from the string, 
    are what leads to the creation of subset. 
- 
-
-   
-
    Decision making should be our primary goal & smaller input is an automatic consequence of this primary goal. 
-         
-2> Recursion - Decision space
-   We use recursion when we want a decision space. This will work as an identification. 
-
     */
