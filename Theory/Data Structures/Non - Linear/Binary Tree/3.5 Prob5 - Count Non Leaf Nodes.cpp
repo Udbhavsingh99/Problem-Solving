@@ -44,7 +44,6 @@ class Node
             data = value;
             right = left = NULL;
         }
-
 };
 
 int countNonLeaves(Node* root)

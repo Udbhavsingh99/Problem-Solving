@@ -77,7 +77,31 @@ Flow :
                             /  \     /  \       / \
                            Y   N    Y   N      Y  N
 
+Decision making should be our primary goal & smaller input is an automatic consequence of this primary goal.
+
    The decisions that we take on these choices ie. to include or not to include a particular character from the string, 
    are what leads to the creation of subset. 
-   Decision making should be our primary goal & smaller input is an automatic consequence of this primary goal. 
+   For empty string ie. " " , for each character in the string abc , we have the choice to either include or not include the 
+   character a , include or not include the character b & include or not include the character c. So the choices are :
+   a - Y or N ie. to include or not to include the character a
+   b - Y or N ie. to include or not to include the character b
+   c - Y or N ie. to include or not to include the character c
+
+   the decisions that we took to get empty string ie. " " are :
+   a - N ie. did not include the character a
+   b - N ie. did not include the character b
+   c - N ie. did not include the character c
+
+   the decisions that we took to get the string a are :
+   a - Y ie. we do include the character a
+   b - N ie. did not include the character b
+   c - N ie. did not include the character c
+
+   the decisions that we took to get the string b are :
+   a - N ie. did not include the character a
+   b - Y ie. we do include the character b
+   c - N ie. did not include the character 
+   
+   
+   
     */
