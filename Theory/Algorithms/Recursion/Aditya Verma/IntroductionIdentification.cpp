@@ -44,6 +44,9 @@ Flow :
    case in the problems we will be provided with choices & decisions. In the problem statement we'd be provided with some choices & based on these 
    choices that are provided to us, we can take some decisions. 
 
+   We take decisions & this is our primary task/goal. On the basis of this decision , our initial input gets transformed into
+   smaller input automatically & this is our secondary task/goal. Our main focus is to take decisions, the input getting smaller is automatic
+   & is a byproduct of the decision that we made/make & hence shouldn't be our main focus. 
    If we want to represent some decision space, then recursion is a good choice to solve that problem.
 
 3> Recursive tree - Soul of Recursion
@@ -73,6 +76,8 @@ Flow :
                               a        b         c
                             /  \     /  \       / \
                            Y   N    Y   N      Y  N
+
+Decision making should be our primary goal & smaller input is an automatic consequence of this primary goal.
 
    The decisions that we take on these choices ie. to include or not to include a particular character from the string, 
    are what leads to the creation of subset. 
