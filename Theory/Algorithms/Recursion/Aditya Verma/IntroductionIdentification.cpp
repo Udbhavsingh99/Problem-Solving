@@ -97,6 +97,42 @@ Flow :
    b - Y ie. we do include the character b
    c - N ie. did not include the character 
    
+   the decisions that we took to get the string c are :
+   a - N ie. did not include the character a
+   b - N ie. did not include the character b
+   c - Y ie. we do include the character c
    
-   
-    */
+   the decisions that we took to get the string ab are :
+   a - Y ie. we do include the character a
+   b - Y ie. we do include the character b
+   c - N ie. did not include the character c
+
+   the decisions that we took to get the string bc are :
+   a - N ie. did not include the character a
+   b - Y ie. we do include the character b
+   c - Y ie. we do include the character c
+
+   the decisions that we took to get the string ac are :
+   a - Y ie. we do include the character a
+   b - N ie. did not include the character b
+   c - Y ie. we do include the character c
+
+   the decisions that we took to get the string abc are :
+   a - Y ie. we do include the character a
+   b - Y ie. we do include the character b
+   c - Y ie. we do include the character c
+
+   So we have a choice to whether include a particular character or not for each string , but we took decisions at each point to include a particular character
+   or not in order to  create a particular string. For example : For string bc ,
+   The choices that we had for string bc were - 
+   1. Include character a or not include character a
+   2. Include character b or not include character b
+   3. Include character c or not include character c
+   Now based on the choices presented above , we can take the decisions to either include or not include a particular character in order to create the desired string.
+   For example the decisions that we took on the above choices in order to create the string bc are -
+   1. Did not include the character a
+   2. Include the character b
+   3. Include the character c
+   the decisions above will lead us to create the string bc which is the desired string.
+
+   */
