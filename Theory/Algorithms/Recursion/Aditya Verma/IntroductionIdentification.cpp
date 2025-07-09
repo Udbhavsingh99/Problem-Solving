@@ -139,5 +139,23 @@ Decision making should be our primary goal & smaller input is an automatic conse
    2. Include the character b
    3. Include the character c
    the decisions above will lead us to create the string bc which is the desired string.
+   As we can see here our input is decreasing in size/getting small , this decrease in size is occuring as a result of the decisions that we take.
+   The initial input string is abc & the desired output string is bc , so we took the decision to not include the character a , this decreased the size of the string 
+   to bc, then we again took the decision to include the character b , now only string/character c remains & then we took the decision to include the character c , so as we take each decision , the input 
+   size is decreasing. The final string is the desired string ie. bc.
+
+   Input : abc -> Decision : not take a -> bc -> Decision : take b -> bc -> Decision : take c -> Output : bc
+
+   So in recursion we are provided some choices & based on the provided choices we take some decisions.
+   Whenever our problem has something related to choices & decisions , then in that case we will use recursion.
+
+   The decrease in size of input is secondary , we need to focus on the primary motive that is to take a decision
+
+   Recursive Tree : 
+   Lets say we have a string ab & we need to find the subset for this string ab.
+
+
+
+   
 
    */
