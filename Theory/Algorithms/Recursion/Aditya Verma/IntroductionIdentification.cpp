@@ -153,9 +153,24 @@ Decision making should be our primary goal & smaller input is an automatic conse
 
    Recursive Tree : 
    Lets say we have a string ab & we need to find the subset for this string ab.
+   In order to get the subset for this string ab , 
+   We don't choose anything ie. we don't choose any character then we get " " 
+   Then we choose the character "a" out of the sting ab & hence we get "a"
+   Then we choose the character "b" out of the string ab & hence we get "b"
+   Then we choose both the characters "a" & "b" & hence we get "ab"
 
+   So , all of our subsets are -
+   Subsets                          Decisions
+   " "                               a❌  b❌
+   "a"                               a✅  b❌  
+   "b"                               a❌  b✅
+   "ab"                              a✅  b✅
 
+   So these are the decisions that we took , now we want the representation for these decisions so that we can represent that properly. So 
+   the method that we can use for this is the recursive tree. 
 
+   In order to create a recursive tree we can use the input-output method. 
+   So in this method we are already provided with an input & we take an output. 
    
 
    */
