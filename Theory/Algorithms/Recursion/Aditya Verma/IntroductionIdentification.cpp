@@ -166,11 +166,13 @@ Decision making should be our primary goal & smaller input is an automatic conse
    "b"                               a❌  b✅
    "ab"                              a✅  b✅
 
-   So these are the decisions that we took , now we want the representation for these decisions so that we can represent that properly. So 
+   So these are  the decisions that we took , now we want the representation for these decisions so that we can represent that properly. So 
    the method that we can use for this is the recursive tree. 
 
    In order to create a recursive tree we can use the input-output method. 
    So in this method we are already provided with an input & we take an output. 
+   We first initialize the output with some value & we are already provided with some input. 
+   From this pair of output & input , we make output1 & the input is smaller & we make output2 & the input is smaller.
+   Then we do the same operation for output 1& the smaller input hence we get , output1` & further smaller input`
    
-
    */
