@@ -173,6 +173,33 @@ Decision making should be our primary goal & smaller input is an automatic conse
    So in this method we are already provided with an input & we take an output. 
    We first initialize the output with some value & we are already provided with some input. 
    From this pair of output & input , we make output1 & the input is smaller & we make output2 & the input is smaller.
-   Then we do the same operation for output 1& the smaller input hence we get , output1` & further smaller input`
-   
+   Then we do the same operation for output 1 & the smaller input hence we get , output1` & further smaller input` & then we get output2` & further
+   smaller input`
+   Similary we do for the output2 & smaller input sa well hence we get , output1` & further smaller input` & then we get output2` & further smaller 
+   input `.
+   This structure is followed for all recursive trees. 
+
+                                                         O/P I/P
+                                                /                    \ 
+                                       OP1 Smaller IP                OP2 Smaller IP
+                                      /            \              /                 \   
+                        OP1` Smaller IP`     OP2` Smaller IP`  OP1` Smaller IP`     OP2` Smaller IP`
+     
+   We initialize the output to any value, then using the already provided input we create output1 & output2 as the left & 
+   right childs of the root node respectively. The input transforms into smaller input as well. 
+   We then further create 2 childs for the left child of the root node ie. output1 , so we create a further smaller output from
+   this output1 which is output1` & output2` , the inputs in both the cases becomes smaller as well. 
+   We also create 2 childs for the right child of the root node ie. output2 , so we create a further smaller output from 
+   this output2 which is output1` & output2` , the inputs in both the cases becomes smaller as well.
+
+   Example -
+   Lets say we are provided string "ab" as input. Then we take some decisions on this input string ab , the decisions that we took
+   are as follows : 
+   " "                               a❌  b❌
+   "a"                               a✅  b❌  
+   "b"                               a❌  b✅
+   "ab"                              a✅  b✅
+
+   We took decisions that for the null string , we don't choose any string ie. neither a nor b & hence this gives us a null string.
+   For 'a' we took the decision that we accept symbol a but reject symbol
    */
