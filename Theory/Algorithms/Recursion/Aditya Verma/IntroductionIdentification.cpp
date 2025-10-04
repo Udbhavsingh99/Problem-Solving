@@ -200,6 +200,14 @@ Decision making should be our primary goal & smaller input is an automatic conse
    "b"                               a❌  b✅
    "ab"                              a✅  b✅
 
-   We took decisions that for the null string , we don't choose any string ie. neither a nor b & hence this gives us a null string.
-   For 'a' we took the decision that we accept symbol a but reject symbol
+   We took decisions that for the null string , we don't choose any string ie. neither 'a' nor 'b' & hence this gives us a null string.
+   For 'a' we took the decision that we accept symbol 'a' but reject symbol 'b'. For 'b' we took the decision that we accept symbol 'b' 
+   but reject symbol 'a'. For 'ab' we took the decision that we accept both strings 'a' & 'b'.
+
+   We will now represent this using a recursive tree. Lets say we have a method named as inputOutput() method. 
+   Now we are provided with the input to our inputOutput() method as string 'ab' .
+   So for given input 'ab' we initialize the output to an empty string ie. ' ' .
+   Now when we come to the first character of the string 'ab' ie. 'a' we have 2 choices , either we include this character 'a' or we reject
+   this character 'a' .
+   No of branches in a recursive tree denote the number of possible 
    */
