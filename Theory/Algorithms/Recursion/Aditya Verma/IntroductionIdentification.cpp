@@ -207,7 +207,20 @@ Decision making should be our primary goal & smaller input is an automatic conse
    We will now represent this using a recursive tree. Lets say we have a method named as inputOutput() method. 
    Now we are provided with the input to our inputOutput() method as string 'ab' .
    So for given input 'ab' we initialize the output to an empty string ie. ' ' .
-   Now when we come to the first character of the string 'ab' ie. 'a' we have 2 choices , either we include this character 'a' or we reject
-   this character 'a' .
-   No of branches in a recursive tree denote the number of possible 
+   Now when we come to the first character of the string 'ab' ie. 'a' we have 2 choices, either we can select this character 'a' or we 
+   can reject this character 'a'
+
+   No of branches in recursive tree tells us/denotes us the number of choices. So lets say the left branch tells us that we don't
+   select character 'a' from input string 'ab' & the right branch tells us that we select character 'a' from the input string 'ab'.
+
+   Now if we don't select character 'a' from the input string 'ab' then we get output as output1 & the input gets smaller, in this case we
+   traverse the left branch & if we do select character 'a' from the input string 'ab' then we get output as output2 & the input gets smaller.
+   In this case we traverse the right branch.
+
+   Now both of these left & right branches are choices that we can take. When we go down/traverse a particular branch then in that case we have 
+   made a decision. 
+
+   Set of output & input value is the node , the branches represent the choices (ie. the number of branches represent the number of choices) that are available ot us 
+   & when we traverse a particular branch ie. we go down a particular branch ,then in that case we have made a decision.
+   21:32
    */
