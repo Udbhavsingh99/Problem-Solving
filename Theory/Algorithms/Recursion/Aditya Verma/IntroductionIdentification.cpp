@@ -171,6 +171,4 @@ Decision making should be our primary goal & smaller input is an automatic conse
 
    In order to create a recursive tree we can use the input-output method. 
    So in this method we are already provided with an input & we take an output. 
-   
-
    */

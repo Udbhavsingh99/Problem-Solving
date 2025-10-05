@@ -40,6 +40,8 @@ Now we know that for the left subtree of node with value 1 , the largest possibl
 Now for the right subtree of node with value 1 , the largest possible height is 6 for the nodes 1-3-7-12-14-15
 
 Basically we add 1 to the largest/maximum possible height in both the subtrees of the present node. 
+So we get the height for the left subtree of a given node & then get the height for the right subtree of a given node.
+Then we take the maximum of these two heights & add 1 to it.
 1:32:50
 
 
