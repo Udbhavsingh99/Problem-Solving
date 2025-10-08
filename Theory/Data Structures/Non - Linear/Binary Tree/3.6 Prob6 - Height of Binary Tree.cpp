@@ -42,6 +42,8 @@ Now for the right subt ree of node with value 1 , the largest possible height is
 Basically we add 1 to the largest/maximum possible height in both ie. left & right the subtrees of the present node. 
 So we add the height of the present node ie. 1 to the maximum of the value returned by the  recursive call for getting the height of the left subtree 
 
+So we get the height for the left subtree of a given node & then get the height for the right subtree of a given node.
+Then we take the maximum of these two heights & add 1 to it.
 1:32:50
 
 
