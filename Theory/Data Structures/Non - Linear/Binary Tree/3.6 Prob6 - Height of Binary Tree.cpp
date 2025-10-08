@@ -37,9 +37,11 @@ Now we start with the root node ie. node with value 1. We then traverse the left
 We then traverse the right subtree of this root node ie. node with value 1 to find the largest possible height in the right subtree. 
 
 Now we know that for the left subtree of node with value 1 , the largest possible height is 4 for the nodes 1-2-5-9-13 .
-Now for the right subtree of node with value 1 , the largest possible height is 6 for the nodes 1-3-7-12-14-15
+Now for the right subt ree of node with value 1 , the largest possible height is 6 for the nodes 1-3-7-12-14-15
 
-Basically we add 1 to the largest/maximum possible height in both the subtrees of the present node. 
+Basically we add 1 to the largest/maximum possible height in both ie. left & right the subtrees of the present node. 
+So we add the height of the present node ie. 1 to the maximum of the value returned by the  recursive call for getting the height of the left subtree 
+
 1:32:50
 
 
