@@ -41,6 +41,7 @@ Now for the right subt ree of node with value 1 , the largest possible height is
 
 Basically we add 1 to the largest/maximum possible height in both ie. left & right the subtrees of the present node. 
 So we add the height of the present node ie. 1 to the maximum of the value returned by the  recursive call for getting the height of the left subtree 
+& the recursive call for getting the height of the right subtree  
 
 So we get the height for the left subtree of a given node & then get the height for the right subtree of a given node.
 Then we take the maximum of these two heights & add 1 to it.
@@ -48,7 +49,7 @@ Then we take the maximum of these two heights & add 1 to it.
 Check the distance of the root node with all the leaf nodes & the height of the binary tree will be equal to the distance of the leaf node that is present 
 at the maximum distance from the root node. 
 
-    
+So we add 1 for the present node value & then to this we add the maximumum of the maximum possible height in the left 
 1:32:50
 
 
