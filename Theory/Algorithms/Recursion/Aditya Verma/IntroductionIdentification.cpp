@@ -222,5 +222,10 @@ Decision making should be our primary goal & smaller input is an automatic conse
 
    Set of output & input value is the node , the branches represent the choices (ie. the number of branches represent the number of choices) that are available to us 
    & when we traverse a particular branch ie. we go down a particular branch ,then in that case we have made a decision.
+   
+   When we traverse a single branch ie. traverse a single level down a branch then we call it as a decision.
+   For example if we traverse down the left branch of the root branch (which consists of OP " " & IP "ab") & we reach the output OP1 in that case then we have taken a decision which in this case is 
+   not including character 'a' from the input string 'ab'. So initially output was empty & as we decided to not include character "a" from input string 'ab' , 
+   the output remains empty & the input becomes smaller ie. 'b'.
    21:32
    */
