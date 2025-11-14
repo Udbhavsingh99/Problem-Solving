@@ -220,7 +220,7 @@ Decision making should be our primary goal & smaller input is an automatic conse
    Now both of these left & right branches are choices that we can take. When we go down/traverse a particular branch then in that case we have 
    made a decision. 
 
-   Set of output & input value is the node , the branches represent the choices (ie. the number of branches represent the number of choices) that are available ot us 
+   Set of output & input value is the node , the branches represent the choices (ie. the number of branches represent the number of choices) that are available to us 
    & when we traverse a particular branch ie. we go down a particular branch ,then in that case we have made a decision.
    21:32
    */
