@@ -255,5 +255,17 @@ Decision making should be our primary goal & smaller input is an automatic conse
    For the right child of the node with output2 ie. "a" & smaller input 'b', initially the output was "a" , we take the decision to include the character 'b' from the input string 'b' ,
    hence the output becomes "ab"  & the input becomes smaller ie. " " ie. empty string. The output is "ab" & the input is an empty string ie." " .
 
-   24:10
+   We get the following outputs in the leaf nodes of the recursive tree - " ", "b", "a", "ab" which are the desired subsets of the input string 'ab'.
+
+                                      " "  ab
+                                   /          \
+                          " "   b               "a"   b
+                         /    \                /     \
+                   " "  ""     "b" ""     "a" ""     "ab" ""
+         
+We get the required subsets in the leaf nodes of the recursive tree. We get " ", "b", "a", "ab" in the leaf nodes of the recursive tree which are the required subsets of the input string 'ab' 
+when the input in the leaf nodes becomes empty string ie. "".
+
+
+24:10
    */
