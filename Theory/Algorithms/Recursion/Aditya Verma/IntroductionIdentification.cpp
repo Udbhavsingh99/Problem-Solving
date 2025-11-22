@@ -139,7 +139,7 @@ Decision making should be our primary goal & smaller input is an automatic conse
    2. Include the character b
    3. Include the character c
    the decisions above will lead us to create the string bc which is the desired string.
-   As we can see here our input is decreasing in size/getting small , this decrease in size is occuring as a result of the decisions that we take.
+   As we can see here our input is decreasing in size/getting small , this decrease in size is occurring as a result of the decisions that we take.
    The initial input string is abc & the desired output string is bc , so we took the decision to not include the character a , this decreased the size of the string 
    to bc, then we again took the decision to include the character b , now only string/character c remains & then we took the decision to include the character c , so as we take each decision , the input 
    size is decreasing. The final string is the desired string ie. bc.
