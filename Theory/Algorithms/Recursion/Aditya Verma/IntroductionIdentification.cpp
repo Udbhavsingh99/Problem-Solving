@@ -227,5 +227,33 @@ Decision making should be our primary goal & smaller input is an automatic conse
    For example if we traverse down the left branch of the root branch (which consists of OP " " & IP "ab") & we reach the output OP1 in that case then we have taken a decision which in this case is 
    not including character 'a' from the input string 'ab'. So initially output was empty & as we decided to not include character "a" from input string 'ab' , 
    the output remains empty & the input becomes smaller ie. 'b'.
-   21:32
+
+   Our focus is on taking decisions , the input becoming smaller is automatic & is a byproduct of the decision that we made/make & hence shouldn't be our main focus. 
+   We took a decision to not include character 'a' from input string 'ab' , this decreased the size of the input string to 'b'. 
+
+   Now when we traverse down the right branch of the root branch (which consists of OP " " & IP "ab") & we reach the output OP2 in that case then we have taken a decision which in this case is 
+   including character 'a' from the input string 'ab'. So initially output was empty & as we decided to include character "a" from input string 'ab' , 
+   the output becomes 'a' & the input becomes smaller ie. 'b'. 
+
+   Once we have taken the decision to include character 'a' from input string 'ab' , then we remove the character 'a' from the input string 'ab" , hence the input string becomes smaller ie. 'b'.
+
+   Now we create 2 childs for both the left & right childs of the root node each.
+   We first create the left & right childs for the left child of the root node ie. output1 which is " " & smaller input 'b'. Now we again have 2 choices ie. either to include the character 'b' 
+   or to not include the character 'b' from the input string 'b'.
+
+   A single set/pair of output & input is a node in the recursive tree. Each of these nodes have 2 branches ie. choices. When we traverse a particular branch ie. go down a particular branch (choice) , 
+   then in that case we have made a decision. This decision will result in a new output & a smaller input. Hence each branch will have a pair of output & smaller input.
+
+   Now for the left child of the node with output1 ie. " " & smaller input 'b', initially the output was " " ie. empty string , we take the decision to not include the character 'b' from the input string 'b' ,
+   hence the output remains " " ie. empty string & the input becomes smaller ie. " " ie. empty string. Both the output & input are empty strings ie." " .
+   For the right child of the node with output1 ie. " " & smaller input 'b', initially the output was " " ie. empty string , we take the decision to include the character 'b' from the input string 'b' , 
+   hence the output becomes "b"  & the input becomes smaller ie. " " ie. empty string. The output is "b" & the input is an empty string ie." " .
+
+   Now for the right child of the root node ie. output2 which is "a" & smaller input 'b'. Now we again have 2 choices ie. either to include the character 'b' or to not include the character 'b' from the input string 'b'.
+   Now for the left child of the node with output2 ie. "a" & smaller input 'b', initially the output was "a" , we take the decision to not include the character 'b' from the input string 'b' , 
+   hence the output remains "a"  & the input becomes smaller ie. " " ie. empty string. The output is "a" & the input is an empty string ie." " .
+   For the right child of the node with output2 ie. "a" & smaller input 'b', initially the output was "a" , we take the decision to include the character 'b' from the input string 'b' ,
+   hence the output becomes "ab"  & the input becomes smaller ie. " " ie. empty string. The output is "ab" & the input is an empty string ie." " .
+
+   24:10
    */
