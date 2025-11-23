@@ -266,6 +266,49 @@ Decision making should be our primary goal & smaller input is an automatic conse
 We get the required subsets in the leaf nodes of the recursive tree. We get " ", "b", "a", "ab" in the leaf nodes of the recursive tree which are the required subsets of the input string 'ab' 
 when the input in the leaf nodes becomes empty string ie. "".
 
+In recursion we take decisions , the input becoming smaller is automatic & is a byproduct of the decision that we made/make & hence shouldn't be our main focus.
+In order to represent the decisions that we took we use recursive tree.
+We can use the input-output method to create recursive tree. In the input output method, each node represents a pair of output & input.
+The branches represent the choices (ie. the number of branches represent the number of choices) that are available to us 
+& when we traverse a particular branch ie. we go down a particular branch ,then in that case we have made a decision & the input automatically becomes smaller.
 
-24:10
+Once we select a branch & go down that branch , then in that case we have made a decision. Then we reach another node which again consists of a pair of output & a smaller input.
+Each of the branches will point to a pair of output & smaller input ie. a node , unless its a leaf node.
+
+Example 2 - 
+We take the initial output as " " ie. empty string & the input as "abc" ie. string "abc".
+Now we have 2 choices ie. either to include character 'a' or to not include character 'a' from the input string 'abc'.
+If we don't include character 'a' from input string 'abc' , then we get output as output1 ie. empty string " " & the input gets smaller, in this case we remove character a 
+from input string 'abc' & the input becomes smaller ie. 'bc'as we have already included/processed character 'a' in the output.
+If we include character 'a' from input string 'abc' , then we get output as output2 ie. "a" & the input gets smaller. In this case we remove character a from input 
+string 'abc' & the input becomes smaller ie. 'bc' as we have already included/processed character 'a' in the output.
+
+Now we create 2 childs for both the left & right childs of the root node each.
+We first create the left & right childs for the left child of the root node. ie. output1 which is " " & smaller input 'bc'. 
+
+Now we again have 2 choices ie. either to include the character 'b' or to not include the character 'b' from the input string 'bc'.
+If we don't include character 'b' from input string 'bc' , then we get output as output1' ie. empty string " " & the input gets smaller, in this case we remove character b
+from input string 'bc' & the input becomes smaller ie. 'c'as we have already included/processed character 'b' in the output.
+If we include character 'b' from input string 'bc' , then we get output as output2' ie. "b" & the input gets smaller. In this case we remove character b from input
+string 'bc' & the input becomes smaller ie. 'c' as we have already included/processed character 'b' in the output.
+
+Now we create the left & right childs for the right child of the root node. ie. output2 which is "a" & smaller input 'bc'.
+If we don't include character 'b' from input string 'bc' , then we get output as output1'' ie. "a" & the input gets smaller, in this case we remove character b
+from input string 'bc' & the input becomes smaller ie. 'c'as we have already included/processed character 'b' in the output.
+If we include character 'b' from input string 'bc' , then we get output as output2'' ie. "ab" & the input gets smaller. In this case we remove character b from input
+string 'bc' & the input becomes smaller ie. 'c' as we have already included/processed character 'b' in the output.
+
+
+
+
+                                      " "  abc
+                                   /          \
+                          " "   bc               "a"   bc
+                         /    \                /     \
+                   " "  c     "b" c     "a" c     "ab" c
+                  /   \      /   \      /   \      /    \
+              " " ""  "c"" "b"" ""  "ac"" "a"" "abc"     ""
+
+
+27:28
    */
