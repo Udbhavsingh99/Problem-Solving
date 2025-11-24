@@ -298,7 +298,37 @@ from input string 'bc' & the input becomes smaller ie. 'c'as we have already inc
 If we include character 'b' from input string 'bc' , then we get output as output2'' ie. "ab" & the input gets smaller. In this case we remove character b from input
 string 'bc' & the input becomes smaller ie. 'c' as we have already included/processed character 'b' in the output.
 
+Now we create 2 childs for both the left & right childs of the node with output1' ie. " " & smaller input 'c'.
+We again have 2 choices ie. either to include the character 'c' or to not include the character 'c' from the input string 'c'.
+If we don't include character 'c' from input string 'c' , then we get output as output1''' ie. empty string " " & the input gets smaller, in this case we remove character c  
+from input string 'c' & the input becomes smaller ie. ''as we have already included/processed character 'c' in the output.
+If we include character 'c' from input string 'c' , then we get output as output2''' ie. "c" & the input gets smaller. In this case we remove character c from input
+string 'c' & the input becomes smaller ie. '' as we have already included/processed character 'c' in the output.
 
+We create 2 childs for both the left & right childs of the node with output2' ie. "b" & smaller input 'c'.
+We again have 2 choices ie. either to include the character 'c' or to not include the character 'c' from the input string 'c'.
+If we don't include character 'c' from input string 'c' , then we get output as output1'''' ie. "b" & the input gets smaller, in this case we remove character c
+from input string 'c' & the input becomes smaller ie. ''as we have already included/processed character 'c' in the output.
+If we include character 'c' from input string 'c' , then we get output as output2'''' ie. "bc" & the input gets smaller. In this case we remove character c from input
+string 'c' & the input becomes smaller ie. '' as we have already included/processed character 'c' in the output.
+
+We create 2 childs for both the left & right childs of the node with output1'' ie. "a" & smaller input 'c'.
+We again have 2 choices ie. either to include the character 'c' or to not include the character 'c' from the input string 'c'.
+If we don't include character 'c' from input string 'c' , then we get output as output1''''' ie. "a" & the input gets smaller, in this case we remove character c
+from input string 'c' & the input becomes smaller ie. ''as we have already included/processed character 'c' in the output.
+If we include character 'c' from input string 'c' , then we get output as output2''''' ie. "ac" & the input gets smaller. In this case we remove character c from input
+string 'c' & the input becomes smaller ie. '' as we have already included/processed character 'c' in the output.  
+
+We create 2 childs for both the left & right childs of the node with output2'' ie. "ab" & smaller input 'c'.
+We again have 2 choices ie. either to include the character 'c' or to not include the character 'c' from the input string 'c'.
+If we don't include character 'c' from input string 'c' , then we get output as output1'''''' ie. "ab" & the input gets smaller, in this case we remove character c
+from input string 'c' & the input becomes smaller ie. ''as we have already included/processed character 'c' in the output.
+If we include character 'c' from input string 'c' , then we get output as output2'''''' ie. "abc" & the input gets smaller. In this case we remove character c from input
+string 'c' & the input becomes smaller ie. '' as we have already included/processed character 'c' in the output.  
+
+All of these are leaf nodes of the recursive tree as the input in all of these nodes is an empty string ie. "".
+We now have all the required subsets in the leaf nodes of the recursive tree - " ", "c", "b", "bc", "a", "ac", "ab", "abc" which are the desired subsets of the input string 'abc'.
+We get the answers in the leaf nodes of the recursive tree when the input in the leaf nodes becomes empty string ie. "".
 
 
                                       " "  abc
@@ -309,6 +339,14 @@ string 'bc' & the input becomes smaller ie. 'c' as we have already included/proc
                   /   \      /   \      /   \      /    \
               " " ""  "c"" "b"" ""  "ac"" "a"" "abc"     ""
 
+The steps to solve any recursion problem are :
+1>When we take decisions on the provided choices , then as a result of these decisions the input automatically becomes smaller.
+2>We identify if recursion is applicable or not by checking if the problem has choices & decisions.
+3>We create recursive tree to represent the decisions that we took on the provided choices.
+4>There are 2 steps to solve any recursion problem :
+   a>Identify the base case
+   b>Identify the recursive case
 
-27:28
+   Base Case - The condition when we stop taking further decisions.
+   Recursive Case - The condition when we keep on taking decisions.
    */
