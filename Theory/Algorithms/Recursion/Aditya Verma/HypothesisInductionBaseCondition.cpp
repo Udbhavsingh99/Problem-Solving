@@ -22,7 +22,28 @@ There are 4 approaches to approach a recursive problem -
 3>Choice diagram method 
 4>
 
-3:30
+We have already learnt the first method - Recursive Tree Method in the previous videos. We now come to the second method - Base Condition -> Hypothesis -> Induction method.
+In this second method for any given recursive problem we design a hypothesis.
+
+Lets say we have a function solve() that takes an input n. We define that this method/function solve(n) is a recursive function & prints values from 1 to n.
+Basically we define what the recursive function returns.
+
+If we define that our function solve(n) prints values from 1 to n, then this function solve(n) will print the values from 1 to n.
+
+To make recursion work as expected , we need to write some code in the induction step, so that the hypothesis that we designed ie. when the solve(n) method gets called, it 
+prints/returns values from 1 to n,  is true. 
+
+Base Condition - 
+Base condition can be the smallest valid input or the largest invalid input.
+
+Print 1 to n -
+So using the input output method we can say that : 
+For input  = n , the output = 1 2 3 ... n
+For eg. If input is 7 , then output will be 1 2 3 4 5 6 7
+
+For the recursive problem print 1 to n ,  we will define our hypothesis 
+
+6:50
 
 
 */
