@@ -41,7 +41,13 @@ So using the input output method we can say that :
 For input  = n , the output = 1 2 3 ... n
 For eg. If input is 7 , then output will be 1 2 3 4 5 6 7
 
-For the recursive problem print 1 to n ,  we will define our hypothesis 
+For the recursive problem print 1 to n ,  we will define/design our hypothesis 
+
+The IBH method ie. Induction , Base condition , Hypothesis method is very useful for questions related to linked list or tree
+
+Step 1 - Design a Hypothesis
+Lets say we create a function named print() & pass it value 7 as argument ie. print(7) , we get this value 7 from the input.
+Now we say that this print(7) method will print values from 1 to 7 ie. 1 2 3 4 5 6 7
 
 6:50
 
