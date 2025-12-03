@@ -49,7 +49,12 @@ Step 1 - Design a Hypothesis
 Lets say we create a function named print() & pass it value 7 as argument ie. print(7) , we get this value 7 from the input.
 Now we say that this print(7) method will print values from 1 to 7 ie. 1 2 3 4 5 6 7
 
-6:50
+Now we will call the print() method for a smaller input lets say if input 7 is n ie. n = 7 , then we will call the print() method for input 
+n-1 ie. 6 which means we call print(6) method.
+We make a call to print(n-1) ie. print(6) method.
 
+
+
+8:35
 
 */
