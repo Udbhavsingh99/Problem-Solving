@@ -53,8 +53,17 @@ Now we will call the print() method for a smaller input lets say if input 7 is n
 n-1 ie. 6 which means we call print(6) method.
 We make a call to print(n-1) ie. print(6) method.
 
+The method print(n) prints all the numbers/values from 1 to n, hence the method print(n-1) will print all the values from 1 to n-1.
+In our case n is 7 & n-1 is 6 , hence the method print(6) will print all the values from 1 to 6 ie. 1 2 3 4 5 6
+
+So first we designed the hypothesis, we defined what the method print(n) does ie. it prints values from 1 to n. In our case n is 7 , hence print(n)
+ie. print(7) will print values from 1 to 7.
+Then we ran the same function for a smaller input ie. print(n-1) ie. print(6) in our case, hence print(n-1) ie. print(6) will print values from 1 to 6.
+As print(n) ie. print(7) has to print values from 1 to 7, after print(n-1) ie. print(6) prints values from 1 to 6.
+
+Step 2 - Induction
 
 
-8:35
+9:35
 
 */
