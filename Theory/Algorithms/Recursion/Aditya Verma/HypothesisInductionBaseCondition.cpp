@@ -62,8 +62,29 @@ Then we ran the same function for a smaller input ie. print(n-1) ie. print(6) in
 As print(n) ie. print(7) has to print values from 1 to 7, after print(n-1) ie. print(6) prints values from 1 to 6.
 
 Step 2 - Induction
+Now we know that if we call print(n-1) method ie. print(6) method , it will print values from 1 to 6.
+In the print(n-1) ie. output of print(n-1) method , which in our case is print(6) method which prints values from 1 to 6 , the only number/value that is left to print 
+is n ie. 7 in our case.
 
+If we want to write the method print(n) which will print the values from 1 to n , then we will first call the method print(n-1) which will print values from 1 to n-1. 
 
-9:35
+Now we will get values from 1 to n-1 & print(n-1) method will provide us the values from 1 to n-1. After 1 to n-1 we want to print n as well. So we do ,
+
+print(n-1); // this will print values from 1 to n-1
+cout << n << " "; // this will print n
+
+Step 3 - Base Condition
+The base condition can be the smallest valid input or the largest invalid input.
+Now as we want to print values from 1 to n , the smallest valid input is 1. 
+So our base condition will be when n = 1 , we will simply print 1. In that case, 
+if(n == 1){
+    return 1;
+}
+
+This is our base condition. Smallest valid input ie. n = 1 is the base condition.
+Had we taken n = 0 as base condition ie. largest invalid input, then we would have returned the value 0 but we want to print values from 1 to n , hence we take n = 1 as base condition.
+Which is why we take base condition as n = 1.
+
+11:57
 
 */
