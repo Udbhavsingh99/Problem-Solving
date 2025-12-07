@@ -85,6 +85,56 @@ This is our base condition. Smallest valid input ie. n = 1 is the base condition
 Had we taken n = 0 as base condition ie. largest invalid input, then we would have returned the value 0 but we want to print values from 1 to n , hence we take n = 1 as base condition.
 Which is why we take base condition as n = 1.
 
-11:57
+Code - 
+We create a method named print() which takes input n of type integer as argument. The return type of the method is void.
+Then we write the base condition ie. if n == 1 , we print 1 & return from the method.
+Then we write the induction step ie. we call the method print(n-1) which will print values from 1 to n-1. 
+
+In the hypothesis that we designed, if we call print(n) method , it will print values from 1 to n. Then if we design the hypothesis for a smaller input ie. n-1 , then print(n-1) will print values from 1 to n-1.
+So we will get values from 1 to n-1 printed using the print(n-1) method call. Then all we need to do is that in the induction step we need to print n as well. This will complete our hypothesis ie. print(n) method prints values from 1 to n.
+Hence after the print(n-1) method call we print n using cout statement. This is the induction step.
+
+void Print(int n){
+    //Base Condition
+    if(n == 1){
+        cout << 1 << " ";
+        return;
+    }
+
+    //Hypothesis Step
+    Print(n-1); // Hypothesis for smaller input (Basis on which our function/method is designed)
+    // Induction
+    cout << n << " "; // Printing n to complete the hypothesis
+}
+
+Recursive Tree -
+If we represent this using a recursive tree , then at the top we have print(n) ie. print(7) method call. 
+Then this print(n) ie. print(7) method calls print(n-1) ie. print(6) method.
+Then print(6) method calls print(n-1) ie. print(5) method.
+Then print(5) method calls print(n-1) ie. print(4) method.
+Then print(4) method calls print(n-1) ie. print(3) method.
+Then print(3) method calls print(n-1) ie. print(2) method.
+Then print(2) method calls print(n-1) ie. print(1) method.
+
+We have made the decision that we will keep on making the input smaller ie. decrementing the input by 1 until we reach the base condition ie. n = 1.
+When we reach the base condition ie. n = 1 , we print 1 & return from the method.
+
+At times we get to know in the leaf node that we have reached the base condition/have the desired output.
+
+We are basically saying that if print(7) works fine then we assume that print(6) works fine. We never interact with the recursive tree below
+print(6) ie. print(5) , print(4) , print(3) , print(2) , print(1) method calls.
+
+We are going to one recursion call ie. if the method works for input n , then we go to just one level below ie. n-1 & assume that it works fine for n-1.
+We dont go further down the recursive tree ie. we dont need to go all the way down to the leaf node of the recursive tree.
+
+Here we are thinking in terms of making the input smaller until we reach the base condition.
+
+When we get a recursive problem we sequentially follow these 3 steps - 
+1> Think in terms of Induction , Base Condition , Hypothesis (If this doesn't work)
+2> Create recursive tree using the input/output method (If this doesn't work)
+3> Create Choice Diagram 
+
+
+16:17
 
 */
