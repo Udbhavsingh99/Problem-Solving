@@ -134,7 +134,30 @@ When we get a recursive problem we sequentially follow these 3 steps -
 2> Create recursive tree using the input/output method (If this doesn't work)
 3> Create Choice Diagram 
 
-
-16:17
-
 */
+
+#include<iostream>
+
+using namespace std;
+
+void print(int n){
+    //Base Condition
+    if(n == 1){
+        cout << 1 << " ";
+        return;
+    }
+
+    //Hypothesis Step
+    print(n-1); // Hypothesis for smaller input (Basis on which our function/method is designed)
+    // Induction
+    cout << n << " "; // Printing n to complete the hypothesis
+}
+
+int main(){
+    int n;
+    cin >> n;
+
+    print(n);
+
+    return 0;
+}
