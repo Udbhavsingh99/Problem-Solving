@@ -49,7 +49,18 @@ void Print(int n){
 We can design hypothesis for any problem statement as we want.
 The difference lies in making the induction step to complete the hypothesis ie. how we are making the hypothesis work for the given problem statement.
 The steps defined in induction step determine how our function will run.
-4:13
+
+Just changing the location of the print statement in induction step will change the output of the function ie. 
+the print statement before the recursive call or after the recursive call will change the output of the function.
+If the print statement is before the recursive call , then it will print N to 1.
+If the print statement is after the recursive call , then it will print 1 to N.
+
+We can design the hypothesis in any way we want (the function will work in whatever way the hypothesis is designed) , the only condition is that the induction 
+step should be designed in such a way that it completes the hypothesis.
+The same method print(n) can be used to print values from 1 to N or N to 1 , the only difference will be in the induction step.
+
+Factorial question (to do) 
+
 
 */
 
