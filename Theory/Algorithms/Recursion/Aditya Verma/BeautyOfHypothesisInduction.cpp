@@ -46,7 +46,9 @@ void Print(int n){
 }
 
 
-
+We can design hypothesis for any problem statement as we want.
+The difference lies in making the induction step to complete the hypothesis ie. how we are making the hypothesis work for the given problem statement.
+The steps defined in induction step determine how our function will run.
 4:13
 
 */
