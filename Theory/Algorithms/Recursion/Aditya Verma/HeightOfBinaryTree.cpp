@@ -93,7 +93,48 @@ If we have null nodes as input to our height() method, then we return -1 as the 
 Code - 
 We create a method height() which takes a pointer to the root node of the binary tree as input & returns an integer value representing the height of the binary tree.
 If the root node points to NULL, we return -1 as the height of the binary tree.
-Now we will apply our hypothesis on smaller input
-5:16
+Now we will apply our hypothesis on smaller inputs. 
+In order to do this we will first create a variable named lh which will store the value returned by the recursive call to height() method on the left child node of the current node ie. root->left.
+Hence the recursive call will be int lh = height(root->left);
+Similarly we create a variable named rh which will store the value returned by the recursive call to height() method on the right child node of the current node ie. root->right.
+Hence the recursive call will be int rh = height(root->right);
+
+In the induction step, we return 1 + max(lh, rh) as the height of the binary tree rooted at that node. This will finally give us the height of the entire binary tree when we call height() method on the root node.
+We are doing this because basically whichever recursive call to height() method returns us the maximum height between the left & right subtrees, we take that maximum height + 1 (to account for the edge between the current node & its child nodes) & return
+that value as the height of the binary tree rooted at that node.
+
+Whichever subtree is larger in height , will determine the height of the entire binary tree rooted at that node.
+So height of our binary tree will be 1 (for the current node) + maximum of the heights of left & right subtrees.
 
 */
+
+#include<iostream>
+
+using namespace std;
+
+class Node {
+    public:
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+int height(Node* root) {
+    // Base Condition
+    if(root == NULL) {
+        return -1;
+    }
+
+    // Hypothesis on smaller inputs
+    int lh = height(root->left);
+    int rh = height(root->right);
+
+    // Induction Step
+    return 1 + max(lh, rh);
+}
