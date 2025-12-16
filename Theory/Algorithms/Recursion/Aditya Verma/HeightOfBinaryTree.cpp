@@ -59,7 +59,41 @@ inputs as well.
 So ,height(root->left) will return us the height of the left subtree rooted at node 2 & height(root->right) will return us the height of the right subtree rooted at node 3.
 
 Induction Step -
+Now the recursive calls height(root->left) & height(root->right) will return us the heights of the left & right subtrees respectively, for each node in the tree.
+So if we have a tree like this -
 
-5:00
+          1
+        /   \
+       2     3
+      / \   / \
+     4   5 6   7
+    / \
+   8   9
+
+If we call height(1) ie. the root node, then height(2) will return us 3 which is the height of the left subtree rooted at node 2
+& height(3) will return us 2 which is the height of the right subtree rooted at node 3.
+So to calculate the height of the entire binary tree rooted at node 1, we take the maximum of the heights of the left & right subtrees.
+In our case max(3,2) = 3 ie. out of the height returned by the recursive calls to height() method on left & right child nodes of the root node ie. the left & right subtrees, 
+we take the maximum height of the two. Now the recursive call to calculate height of left subtree returned us 3 & that of right subtree returned us 2.
+So we take the maximum of the two heights ie. max(3,2) = 3 & hence the height of the entire binary tree rooted at node 1 is 3.
+So whichever recursive call to height() method returns us the maximum height between the left & right subtrees, we take that maximum height + 1 (to account for the edge between the current node & its child nodes) & return
+that value as the height of the binary tree rooted at that node.
+
+We store the height returned by the recursive call to height() method on left child node in a variable named leftHeight.
+We store the height returned by the recursive call to height() method on right child node in a variable named rightHeight.
+We then return max(leftHeight, rightHeight) + 1 as the height of the binary tree rooted at that node.
+Basically in induction step we return 1+max(height(root->left), height(root->right)), in order to include the height of the root node as well.
+
+Base Condition - 
+The smallest valid input for the height() method would be a NULL node ie. when the binary tree is empty.
+So when the input node is NULL, we return -1 as the height of the binary tree.
+The leaf nodes in our tree point to null nodes as their left & right child nodes. 
+If we have null nodes as input to our height() method, then we return -1 as the height of the binary tree.
+
+Code - 
+We create a method height() which takes a pointer to the root node of the binary tree as input & returns an integer value representing the height of the binary tree.
+If the root node points to NULL, we return -1 as the height of the binary tree.
+Now we will apply our hypothesis on smaller input
+5:16
 
 */
