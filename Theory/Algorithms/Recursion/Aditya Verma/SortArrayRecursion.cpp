@@ -52,5 +52,116 @@ We dont need to reduce further because in our sort() method when a single elemen
 Basically if the array passed as input to the sort() method has size 1 ie. contains a single element , then the array is already sorted.
 
 A single element is increasing, decreasing & sorted at the same time. These are relative.
-9:23
+
+Then the base condition is that if the size of the array/vector decreases to/is equal to 1 , then we return from the sort() method & no more recursive calls to the sort() method is required.
+So as we keep decreasing the size of the input array in each consecutive recursive call to the sort() method, then the size of the array will eventually reach 1 ie. the array will eventually contain only one element & when that happens then we have reached the base case & hence we return back
+from the sort() method call as there is no more recursive calls required to the sort() method.
+
+Hypothesis - 
+We have designed the hypothesis that if we call the sort() method on any input array/vector, then the sort() method will sort the input array/vector & return the sorted array/vector.
+
+Induction - 
+We write the code for the function in the induction step so that it works in the way its required in the hypothesis.
+Lets say we pass array arr[] = {2,1,3} to the sort() method ie. sort(2,1,3) , then the output will be 1,2,3 ie. sorted array.
+Now we will decrease the size of the input array arr[] by 1 ie. we will remove the last element 3. 
+In the next recursive call to the sort() method we will pass arr[] = {2,1} to the sort() method ie. sort(2,1) , then the output will be 1,2 ie. sorted array. 
+Now our responsibility is to insert the removed last element 3 at the correct position in the sorted array arr[] = {1,2}.
+Now we will decrease the size of the input array arr[] by 1 ie. we will remove the last element 2.
+In the next recursive call to the sort() method we will pass arr[] = {1} to the sort() method ie. sort(1) , then the output will be 1 ie. sorted array.
+Now at this point as there is only one element/value present in the array arr[] , hence the array is already sorted.
+Then we return from the sort() method & no more recursive calls to the sort() method is required.
+
+Lets say we call the sort() method on the array arr[] = {1, 5, 0, 2} ie. sort(1, 5, 0, 2)
+Now we know that the sort() method will sort the input array arr[] = {1, 5, 0, 2} & return the sorted array arr[] = {0, 1, 2, 5} as output.
+Now we will decrease the size of the input array arr[] by 1 ie. we will remove the last element 2 to make the input array smaller. So when we pass a smaller input ie.
+array arr[] = {1, 5, 0} to the sort() method ie. sort(1, 5, 0) , then the output will be arr[] = {0, 1, 5} ie. sorted array. This is based on the hypothesis on the basis of which we designed our sort() method.
+Now our responsibility is to insert the removed last element 2 at the correct position in the sorted array arr[] = {0, 1, 5}.
+
+So we go one step down after removing the last element from the input array in order to make the input array smaller. If it works for a smaller input ie. one step then it will work for 
+all further steps.
+
+Now our input array arr[] that was provided to us was {1, 5, 0, 2} , now in order to make the input array smaller we removed the last element 2 from the input array arr[] to make it {1, 5, 0} 
+& passed this smaller input array arr[] = {1, 5, 0} to the sort() method/function.
+Now the sort() method will sort this smaller input array arr[] = {1, 5, 0} & return the sorted array arr[] = {0, 1, 5} as output. Now we have the element 2 that we removed from the original input array arr[] = {1, 5, 0, 2} , 
+now we have to insert this element 2 at the correct position in the sorted array arr[] = {0, 1, 5} such that the final array remains sorted after inserting the element 2.
+So we meed to insert the element 2 at the correct position between element 0, 1 & 5 in the sorted array arr[] = {0, 1, 5} such that the final array remains sorted after inserting the element 2.
+
+Induction -
+Now in the induction step we have the sorted array arr[] = {0, 1, 5} for the smaller input & we have to insert the element 2 that we removed in the previous step to make the input array smaller at the correct position in this sorted array arr[] = {0, 1, 5} 
+such that the final array remains sorted after inserting the element 2.
+
+The code written in the induction step makes the hypothesis work.
+
+In order to insert the element 2 at the correct position in the sorted array arr[] = {0, 1, 5} , we will create a new array , then we compare each of the elements in our original array arr[] = {0, 1, 5} with the element 2 that we want to insert at the correct position in this 
+newly created array. If the element is smaller than or equal to 2 , then we insert that element in the new array. When we find an element that is greater than 2 , then we insert 2 at that position in the new array.
+Then we insert all the remaining elements from the original array arr[] = {0, 1, 5} in the new array.
+So the first element 0 is smaller than 2 , so we insert 0 in the new array.
+The second element 1 is smaller than 2 , so we insert 1 in the new array.
+The third element 5 is greater than 2 , so we insert 2 in the new array at this position.
+Then we insert the remaining element 5 from the original array arr[] = {0, 1, 5} in the new array.
+So the final new array is arr[] = {0, 1, 2, 5} which is sorted.
+This can be done in an iterative approach using loops.
+
+So the original array that was provided to us arr[] = {1, 5, 0, 2} , we make the input array smaller/decrease the size of the input array by removing the last element 2 to make it arr[] = {1, 5, 0} 
+& pass this smaller input array arr[] = {1, 5, 0} to the sort() method/function.
+The sort() method/function sorts this smaller input array arr[] = {1, 5, 0} & returns the sorted array arr[] = {0, 1, 5} as output.
+Now we need to insert the removed last element 2 at the correct position in the sorted array arr[] = {0, 1, 5} such that the final array remains sorted after inserting the element 2.
+This will be handled in the induction step of our sort() method/function.
+
+One way is that we can run a loop from the first index of the sorted input array ie. i = 0 & in each iteration we compare the value present at that index in the array with the value 2 ie. the value that we removed earlier
+to make the input array to the sort() method smaller.
+For the input array arr[] = {0, 1, 5} , 
+in the first iteration the value of i is i = 0, hence arr[i] = arr[0] = 0 , as 0<2 , 0 is placed at the first index ie. index 0 of the new array.
+|0|1|5|
+^
+as 0<2, 
+|0| | | |
+in the second iteration the value of i is  i = 1, hence arr[i] = arr[1] = 1 , as 1<2, 1 is placed at the second index ie. index 1 of the new array.
+|0|1|5|
+   ^
+as 1<2,
+|0|1| | |
+in the third iteration the value of i is i = 2, hence arr[i] = arr[2] = 5 , as 5>2 , 2 is placed at the third index ie. index 2 of the new array.
+|0|1|5|
+     ^
+as 5>2,
+|0|1|2| |
+Now only the value 5 remains in the original array  , hence we just place 5 at the fourth index ie. index 3 of the new array.
+|0|1|2|5|
+Now we have the sorted array.
+
+Recursive approach - 
+We have an array arr[] = {0, 1, 5} & the element 2 that we removed from the last position/index in the array to make the input array smaller/decrease the size of 
+the input array.
+We need to insert this value 2 in the correct position inside the sorted array {0, 1, 5} such that the order of the array is maintained.
+
+If we are unable to determine a decision then we focus on making the input smaller.
+We need to put 2 in the input array arr[] = {0, 1, 5}
+So we decrease the size of the input array be removing the last element ie. 5. 
+Now we need to insert the element/value 2 in the array arr[] = {0, 1}
+If we are able to put the element 2 at the correct position in the array , then we already know that 5 is the largest element in the array, hence it will be placed automatically 
+at the last index in the output array.
+So once we add element 2 to the output array , then 5 will automatically be placed at the last index in the array ie. the output array arr[] = { 0, 1, 2, 5}
+
+Now this is a new recursive problem - 
+Now we have an array arr[] = {0, 1, 5} & we want to insert the value/element 2 that we removed from the original array. 
+So we create an insert() method & to this insert() method we pass a vector/array ie. {0, 1, 5} as the first argument & the element that we want to insert into this array/vector as the second
+argument ie. insert(vector, element)
+
+Base Condition - 
+In order to be able to insert the element in this case 2 in the array/vector , if there is an array/vector in the first place.
+We are decreasing the size of the input array with each recursive call.
+If the input array that we pass to insert() method is empty, then there is no need for comparison & hence we can directly insert the value/element 2 in the output array.
+Even if there is a single element in the input array that we pass to the insert() method , then we would need to compare the value of that element with the element 2 ie. the element that we pass
+as the second argument to the insert() method that we want to insert in the input array that we pass as the first argument to the insert() method.
+
+If the input array is empty then there is no requirement to compare as there are no elements to compare , hence we can directly insert the element 2 ie. the value that we pass as the second argument to  
+the insert() method inside the empty array that we pass as first argument to the insert() method.
+
+So the first condition will be if the size of the array/vector that we pass as input ie. the first argument is 0 ie. empty or not.
+
+
+
+
+18:40
 */
