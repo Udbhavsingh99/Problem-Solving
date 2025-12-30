@@ -160,7 +160,9 @@ the insert() method inside the empty array that we pass as first argument to the
 
 So the first condition will be if the size of the array/vector that we pass as input ie. the first argument is 0 ie. empty or not.
 
-
+If we compare the input element that we pass as the second argument to the insert() method with the last element of the input array that we pass as the first argument to the insert() method & if the input
+element is greater than or equal to the last element of the input array, then we dont need to traverse the array & change the position of any other element in the array , hence we can directly insert the
+input element at the last position of the array.
 
 
 18:40
