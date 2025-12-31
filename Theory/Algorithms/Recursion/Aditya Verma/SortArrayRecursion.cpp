@@ -153,16 +153,28 @@ In order to be able to insert the element in this case 2 in the array/vector , i
 We are decreasing the size of the input array with each recursive call.
 If the input array that we pass to insert() method is empty, then there is no need for comparison & hence we can directly insert the value/element 2 in the output array.
 Even if there is a single element in the input array that we pass to the insert() method , then we would need to compare the value of that element with the element 2 ie. the element that we pass
-as the second argument to the insert() method that we want to insert in the input array that we pass as the first argument to the insert() method.
+  the second argument to the insert() method that we want to insert in the input array that we pass as the first argument to the insert() method.
 
 If the input array is empty then there is no requirement to compare as there are no elements to compare , hence we can directly insert the element 2 ie. the value that we pass as the second argument to  
 the insert() method inside the empty array that we pass as first argument to the insert() method.
 
 So the first condition will be if the size of the array/vector that we pass as input ie. the first argument is 0 ie. empty or not.
 
-If we compare the input element that we pass as the second argument to the insert() method with the last element of the input array that we pass as the first argument to the insert() method & if the input
+1>If we compare the input element that we pass as the second argument to the insert() method with the last element of the input array that we pass as the first argument to the insert() method & if the input
 element is greater than or equal to the last element of the input array, then we dont need to traverse the array & change the position of any other element in the array , hence we can directly insert the
 input element at the last position of the array.
+
+2>If we compare the input element that we pass as the second argument to the insert() method with the first element of the input array that we pass as the first argument to the insert() method & if the input
+element is smaller that or equal to the first element of the input array , then we don't need to traverse the array & change the position of any other element in the array , hence we can directly insert
+the input element at the first position of the array.
+
+In both 1 & 2 scenarios we wouldn't need to compare the input element that we get as second argument in our insert() method, with the value in the input array that we pass as the first argument to the insert() method.
+
+If the element passed as the second argument to the insert() method would have been 6 , then we could've easily compared this element 6 with the last element of the input array that we pass as the first argument to the
+insert() method , which in this case is 5 , as 6>5 hence we can insert this element/value 6 directly in the array at the last position/index without making any changes to other elements in the array.
+
+
+
 
 
 18:40
