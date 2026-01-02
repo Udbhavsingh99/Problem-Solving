@@ -173,6 +173,8 @@ In both 1 & 2 scenarios we wouldn't need to compare the input element that we ge
 If the element passed as the second argument to the insert() method would have been 6 , then we could've easily compared this element 6 with the last element of the input array that we pass as the first argument to the
 insert() method , which in this case is 5 , as 6>5 hence we can insert this element/value 6 directly in the array at the last position/index without making any changes to other elements in the array.
 
+The problem is that when we try to insert the value 2 inside the input array that we pass as first argument to the insert() method , then in that case we would need to change the indexes/positions of all the other elements greater
+than 2 ie. the input element that we pass as the second argument to the insert() method
 
 
 
