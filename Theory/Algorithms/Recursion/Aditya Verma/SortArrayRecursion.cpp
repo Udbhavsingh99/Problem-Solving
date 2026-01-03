@@ -174,7 +174,22 @@ If the element passed as the second argument to the insert() method would have b
 insert() method , which in this case is 5 , as 6>5 hence we can insert this element/value 6 directly in the array at the last position/index without making any changes to other elements in the array.
 
 The problem is that when we try to insert the value 2 inside the input array that we pass as first argument to the insert() method , then in that case we would need to change the indexes/positions of all the other elements greater
-than 2 ie. the input element that we pass as the second argument to the insert() method
+than 2 ie. the input element that we pass as the second argument to the insert() method. In our scenario if we pass the input array arr[] = {0, 1, 5}  as the first argument & the value 2 as the element to be inserted as the second argument
+then in order to insert the element 2 in the input array while maintaining the sorted order of the input array arr , we need to increment the index of the values in the input array arr that are greater than the element 2 ie. in this case
+element 5. Hence the final array after insertion of element 2 that we pass as second argument to the insert() method & after incrementing the position/indexes of the values/elements in the input array arr that are greater than element 2 is
+{0, 1, 2, 5}. Hence in a scenario where the value to be inserted in the input array is neither larger than the largest value present in the input array nor smaller than the smallest value present in the input array , the index of all values larger than
+the value to be inserted in the array needs to be incremented by 1.
+
+If the value to be inserted in the input array arr is larger than the largest value present in the input array arr, then we don't need to change the indexes/positions of any other elements in the input array arr , we can directly insert the element at
+the last position/index in the array arr. In our case the largest value present in the input array arr is 5 , if lets say the value to be inserted in the input array arr is 6 , then in that case the largest element in the input array ie. 5
+is less than the value that we are trying to insert ie. 6 ie. 6>5
+
+
+
+
+
+
+
 
 
 
