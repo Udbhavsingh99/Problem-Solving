@@ -182,18 +182,43 @@ the value to be inserted in the array needs to be incremented by 1.
 
 If the value to be inserted in the input array arr is larger than the largest value present in the input array arr, then we don't need to change the indexes/positions of any other elements in the input array arr , we can directly insert the element at
 the last position/index in the array arr. In our case the largest value present in the input array arr is 5 , if lets say the value to be inserted in the input array arr is 6 , then in that case the largest element in the input array ie. 5
-is less than the value that we are trying to insert ie. 6 ie. 6>5
+is less than the value that we are trying to insert ie. 6 ie. 6>5 , hence we will just insert the value 6 at the last position/index in the input array arr without changing the indexes/positions of any other elements in the input array arr.
 
-Continue from here
+Hence the base condition is - 
+Vector v is passed as first argument & element is the value to be inserted & passed as the second argument to the insert() method & the last element in this vector v is present at the index v.size() - 1
+if(v.size() == 0 || v[v.size() - 1] <= element) 
+{
+    v.push_back(element);
+    return;
+}
+in this scenario we directly pushback/insert the element that we get as second argument in the insert() method at the last index/position in the input vector v that we get as the first argument in the insert() method when either the input array/vector is 
+completely empty or the last element in the input array/vector v is less than the value that we want to insert in the input array/vector. 
+
+Now if the input array/vector has values {0, 1, 5} & the value to be inserted is 2, then we will first store the value 5 ie. the last & largest element in the input array/vector in a separate temp variable var.
+
+Hypothesis - 
+The insert() method will take an input array/vector as the first argument & an element/value to be inserted in this input array /vector as the second argument & will insert this element/value at the correct position in the input array/vector such that the order of the input array/vector is maintained
+ie. post insertion of the element in the input array/vector, all elements in the input array/vector will be sorted in ascending order.
+For input array arr[] = {0, 1, 5} & element = 2 , the output will be arr[] = {0, 1, 2, 5} ie. sorted array.
+
+Now we will pass a smaller input array/vector to the insert() method by removing the last element 5 from the input array/vector ie. the input array/vector will be {0, 1}
+So the input array arr[] = {0, 1} & element = 2 , the output will be arr[] = {0, 1, 2} ie. sorted array.
+
+Now the element 5 that we removed earlier & is stored in the temp variable var , should be inserted at the correct position in the sorted array arr[] = {0, 1, 2} such that the order of the array is maintained ie. post insertion of element 5 in the array arr[] = {0, 1, 2} , the final array should be
+arr[] = {0, 1, 2, 5} ie. sorted array. This is because 5 is the largest element in the original input array arr[] = {0, 1, 5}, hence it will be placed automatically at the last index in the output array.
+
+Induction - 
+Once we have the sorted array arr[] = {0, 1, 2} for the smaller input , then we need to insert the removed last element 5 at the correct position in this sorted array arr[] = {0, 1, 2} such that the final array remains sorted after inserting the element 5.
+We insert the element 5 at the last index of the sorted array arr[] = {0, 1, 2} to get the final sorted array arr[] = {0, 1, 2, 5} this is because 5 is the largest element in the original input array arr[] = {0, 1, 5}.
+
+So in the insert() method/function , we have the base condition ie. if the size of the input array/vector is 0 or if the value/element passed as the second argument to the insert() method is greater than the last/largest element present in the input array/vector passed as the first argument to the 
+insert() method, then we directly insert/pushback the element at the last index/position in the input array/vector.
+
+We then store the last/largest element in the input array/vector in a temp variable var to later add it again in the sorted output array, then we remove/pop the last element from the input array/vector to make the input array/vector smaller.
+Now we will again call the insert() method/function on this smaller input array/vector to insert the element at the correct position in this smaller input array/vector. We call the insert() method/function recursively on this smaller input array/vector & as the second argument we pass the element
+that we want to insert in this smaller input array/vector.
 
 
 
-
-
-
-
-
-
-
-18:40
+23:15
 */
