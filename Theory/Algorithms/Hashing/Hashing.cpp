@@ -44,12 +44,12 @@ passed as argument to the function & the value/number at the current index in th
 value is increased/incremented else the counter value remains the same. At the end of the for loop ie. after the entire array
 traversal is completed, the counter value is updated & we return this updated value of counter variable.
 
-We pass the value whose occurence frequency we want to check as the first argument to the function/method.
+We pass the value whose occurrence frequency we want to check as the first argument to the function/method.
 It does a linear iteration ie. it goes to every element & checks if the value passed to the method is same/equal as the value present
 at that particular index in the array & then it updates the counter , at the end of the method it returns the counter.
 
 As we are running the loop for N times , hence the time that we are taking in order to compute how many times a number appears is O(N).
-So if we want to search the number of occurences
+So if we want to search the number of occurrences
 
 
 */
