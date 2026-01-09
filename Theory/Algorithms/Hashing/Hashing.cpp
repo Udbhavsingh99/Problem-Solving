@@ -49,7 +49,10 @@ It does a linear iteration ie. it goes to every element & checks if the value pa
 at that particular index in the array & then it updates the counter , at the end of the method it returns the counter.
 
 As we are running the loop for N times , hence the time that we are taking in order to compute how many times a number appears is O(N).
-So if we want to search the number of occurences
+So if we want to search the number of occurences for a number present in the array , then for each number in our input array it will take
+O(N) time ie. the complete loop is traversed to check the number of occurences of each value in our input array.
 
+If our input array has 5 elements , then for 5 numbers we need to find how many times each number appears in the input array , the time complexity
+for finding the occurence of each number in the input array is O(N) , then for 5 numbers the time complexity would be 5 times of O(N) ie.  5*O(N)
 
 */
