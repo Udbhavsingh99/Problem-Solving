@@ -49,10 +49,138 @@ It does a linear iteration ie. it goes to every element & checks if the value pa
 at that particular index in the array & then it updates the counter , at the end of the method it returns the counter.
 
 As we are running the loop for N times , hence the time that we are taking in order to compute how many times a number appears is O(N).
-So if we want to search the number of occurences for a number present in the array , then for each number in our input array it will take
-O(N) time ie. the complete loop is traversed to check the number of occurences of each value in our input array.
+So if we want to search the number of occurrences for a number present in the array , then for each number in our input array it will take
+O(N) time ie. the complete loop is traversed to check the number of occurrences of each value in our input array.
 
-If our input array has 5 elements , then for 5 numbers we need to find how many times each number appears in the input array , the time complexity
-for finding the occurence of each number in the input array is O(N) , then for 5 numbers the time complexity would be 5 times of O(N) ie.  5*O(N)
+If our input array has 5 elements/numbers , then for 5 numbers we need to find how many times each number appears in the input array , the time complexity
+for finding the occurrence of each number in the input array is O(N) , then for 5 numbers the time complexity would be 5 times of O(N) ie.  5*O(N)
 
+Lets say the input array has huge number of such elements ie. our input array has lot of such numbers, lets say we have Q numbers in our input array. 
+For each one of the numbers out of this Q numbers present in our input array , we need to tell how many times each particular number appears in the 
+input array. So for each number we are taking O(N) time , hence for Q numbers the time complexity would be Q*O(N) ie. O(QN).
+This is because everytime we are taking a for loop & computing it, then for each for loop the time complexity is O(N) , hence as there are Q numbers 
+present in the input array , hence the time complexity is O(QN). This is a very large time complexity.
+
+Hashing - 
+Hashing is pre-storing & fetching the stored data as per requirement.
+Lets say that we have an input array & the problem statement states that this input array at max will have numbers till 12.
+
+Now we know that our input array will have numbers only from 0 to 12. So we will create another array named HashArray of size 13 ( 0 to 12 inclusive ) & 
+initialize all the values/indexes of this HashArray to 0.
+The indexing in this newly created array will start from 0 & will go till 12. 
+
+Now in this HashArray , we will do some pre-calculation. 
+Lets say the input array is 
+
+|1|2|1|3|2|
+
+We go to the first index in the input array ie. index 0 , the value present at index 0 is 1. Now we go to the HashArray at index 1 & increment the value present at index 1 by 1. The value at index 1 in HashArray is now 1.
+We go to the next ie. second index in the input array ie. index 1 , the value present at index 1 is 2. Now we go to the HashArray at index 2 & increment the value present at index 2 by 1. The value at index 2 in HashArray is now 1.
+We go to the next ie. third index in the input array ie. index 2 , the value present at index 2 is 1. Now we go to the HashArray at index 1 & increment the value present at index 1 by 1. The value at index 1 in HashArray is now 2. 
+We go to the next ie. fourth index in the input array ie. index 3 , the value present at index 3 is 3. Now we go to the HashArray at index 3 & increment the value present at index 3 by 1. The value at index 3 in HashArray is now 1.
+We go to the next ie. fifth index in the input array ie. index 4 , the value present at index 4 is 2. Now we go to the HashArray at index 2 & increment the value present at index 2 by 1. The value at index 2 in HashArray is now 2.
+
+Once we have traverse the entire input array for all its elements/numbers , the HashArray if we properly observe , in the index of HashArray representing the value in the input array , we can find the number of times a particular 
+value/number appears in the input array. Each index in the HashArray represents the value present in the input array & the value present at that index in the HashArray represents the number of times that particular value appeats in 
+the input array.
+
+The value 2 at index 1 in HashArray represents/means that the value 1 appears 2 times in the input array.
+The value 2 at index 2 in HashArray represents/means that the value 2 appears 2 times in the input array.
+The value 1 at index 3 in HashArray represents/means that the value 3 appears 1 time in the input array. 
+The remaining indexes in HashArray marked as 0 represents/means that the values 0, 4, 5, 6, 7, 8, 9, 10, 11, 12 appear 0 times
+in the input array.
+
+Hence the final HashArray will look like this -
+Index: 0 1 2 3 4 5 6 7 8 9 10 11 12
+Value: 0 2 2 1 0 0 0 0 0 0 0  0  0 
+
+This is the pre-storing/pre-fetching of data that we have done using hashing. 
+
+Now when we want to check for the occurrences of a particular number in the input array , then instead of looping through the entire array & finding the occurrences of the number , we can directly go to the HashArray at the index 
+representing that number & fetch the value present at that index in HashArray , which will give us the number of occurrences of that particular number in that input array.
+
+Lets say we want to check the occurrences for the following numbers in the input array - 
+
+1, 3, 4, 2, 10, 12
+
+then we don't loop through the entire array to find the occurrences of each of the numbers present in the input array,  we use the prefetched values present in HashArray for this.
+If we want to check for the number of occurrences of number 1 in the input array , then we don't loop through the entire input array & check the number of occurrences of value 1 in the input array, 
+instead we directly check the value present at index 1 in HashArray because index 1 of HashArray represents the value 1 in input array. The value present at index 1 in HashArray is 2 , 
+hence the number of occurrences of value 1 in input array is 2 as the number stored at index 1 in HashArray represents the number of occurrences of value 1 in input array.
+So number of occurrences of 1 in input array = HashArray[1] = 2
+Similarly, 
+number of occurrences of 3 in input array = HashArray[3] = 1
+number of occurrences of 4 in input array = HashArray[4] = 0
+number of occurrences of 2 in input array = HashArray[2] = 2
+number of occurrences of 10 in input array = HashArray[10] = 0
+number of occurrences of 12 in input array = HashArray[12] = 0
+
+Hence we did a single precomputation/traversal of the input array to create the HashArray which took O(N) time.
+
+Precomputation - 
+Lets say the size of the input array is 5,
+The input array is 1 3 2 1 3
+The total values/numbers for which we need to find the number of occurrences is 5
+The values for which we need to find the number of occurrences in input array is 1, 4, 2, 3, 12
+
+Declaring Hash - 
+What if the largest value present in the input array is very large , lets say 10^9.
+Then we cannot create a HashArray of size 10^9 + 1 as it will take a lot of space in memory. 
+The maximum size array that we can declare/create inside the main() method is of size 10^6 of type int.
+Any value larger than this will give us a segmentation fault.
+
+But if we declare this HashArray globally ie. outside the main() method, then we can create a HashArray of size 10^7
+of type int. 
+
+For boolean values , inside the main() method we can create a boolean array of size 10^7 of type boolean.
+For boolean values , globally ie. outside the main() method we can create a boolean array of size 10^8 of type boolean.
+
+Character Hashing - 
+If we require number hashing then we can use arrays to hash them.
+
+
+
+21:52
 */
+
+#include<iostream>
+#include<stdio.h>
+
+using namespace std;
+
+int main()
+{
+	int n; //Size of the input array
+	cin>>n;
+
+	int arr[n]; //Input array
+
+	for(int i=0; i<n; i++)
+	{
+		cin>>arr[i];
+	}
+
+	//precomputation 
+	//Declare a hash array with size 13 as maximum possible value in input array is 12 , the size of HashArray depends on largest value present in input array
+	int HashArray[13] = {0}; //Initialize all values to 0
+	for(int i=0; i<n; i++)
+	{
+		HashArray[arr[i]]+=1; 
+	}
+
+	int q;
+	cin>>q;
+
+	while(q--)
+	{
+		int number;
+		cin>>number;
+		//fetch
+		cout<<HashArray[number]<<endl; //fetching the precomputed value ie. number of occurrences of 'number' in input array
+	}
+
+	return 0;
+
+}
+
+
