@@ -137,6 +137,13 @@ For boolean values , globally ie. outside the main() method we can create a bool
 
 Character Hashing - 
 If we require number hashing then we can use arrays to hash them.
+Similarly we can do character hashing using arrays as well.
+
+Lets say we have an input string s = "abcdabefc"
+Then in this input string the character 'a' appears two times , character 'c' appears two times , character 'z' appears zero times...
+Similarly we can do for a lot of characters.
+We can check for the occurrence of Q characters in the input array & we need to tell the occurrence of each of these Q characters inside the input array.
+
 
 
 
