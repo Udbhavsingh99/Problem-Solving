@@ -143,6 +143,8 @@ Lets say we have an input string s = "abcdabefc"
 Then in this input string the character 'a' appears two times , character 'c' appears two times , character 'z' appears zero times...
 Similarly we can do for a lot of characters.
 We can check for the occurrence of Q characters in the input array & we need to tell the occurrence of each of these Q characters inside the input array.
+Based on standard procedure we take a character that we want to find the occurrences for , then we iterate the entire input string & check the occurrences for 
+that character in the input string. Each time we find that character in the input string , we increment the counter variableby 1.
 
 
 
