@@ -144,12 +144,31 @@ Then in this input string the character 'a' appears two times , character 'c' ap
 Similarly we can do for a lot of characters.
 We can check for the occurrence of Q characters in the input array & we need to tell the occurrence of each of these Q characters inside the input array.
 Based on standard procedure we take a character that we want to find the occurrences for , then we iterate the entire input string & check the occurrences for 
-that character in the input string. Each time we find that character in the input string , we increment the counter variableby 1.
+that character in the input string. Each time we find that character in the input string , we increment the counter variable by 1.
+
+We iterate through the entire string & in a similar way we compare the character with each of the characters & we count it.
+
+In our method we take the string to be iterated over ie. the input string on which we need to find the occurrences of characters as the first argument to the method
+& the character whose occurrences we need to find as the second argument to the method.
+We then create a variable count & initialize it to 0.
+We run a for loop in order to iterate over the entire input string. We compare the current character in the string in present iteration with the character that we 
+passed as second argument to the method. If both characters are same then we increment the counter variable by 1. We finally return the counter variable.
+Every iteration of the input string takes O(N) time. If we are given Q characters whose occurrences we need to find in the input string , then the time complexity
+will be O(QN) as for each character we are iterating through the entire input string.
+
+Now we can hash the input string into arrays to decrease the time complexity.
+The arrays have indexes. 
+Lets imagine the characters inside our string are all lowercase alphabets/characters ie. from 'a' to 'z' which means 26 elements/characters.
+So we create an array of size 26 ie. array with indexes from 0 to 25 & initialize all the values to 0.
+Since we know that there are 26 alphabets, we can correspond/map index 0  value to occurrences of character 'a', index 1 value to occurrences of character 'b' & so on
+basically mapping/corresponding the indexes to characters & the values stored at these indexes to the occurrences of those characters.
+We dont have any relation between the index & character , we are just assuming that the indexes represent respective characters & in this way we will have 1 index in an 
+array for all of our 26 alphabets.
+
+In order to program this mapping procedure of the indexes to characters, we can use the ASCII values of characters.
 
 
-
-
-21:52
+27:05
 */
 
 #include<iostream>
