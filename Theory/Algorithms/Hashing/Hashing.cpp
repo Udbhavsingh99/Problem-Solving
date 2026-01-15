@@ -166,7 +166,7 @@ We dont have any relation between the index & character , we are just assuming t
 array for all of our 26 alphabets.
 
 In order to program this mapping procedure of the indexes to characters, we can use the ASCII values of characters.
-So lets say we assign a character to a variable of type int ie. integer.
+So lets say we assign a character to a variable of type int ie. integer lets say int x = 'a'
 
 27:05
 */
