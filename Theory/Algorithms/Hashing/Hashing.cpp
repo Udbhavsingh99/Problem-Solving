@@ -166,9 +166,42 @@ We dont have any relation between the index & character , we are just assuming t
 array for all of our 26 alphabets.
 
 In order to program this mapping procedure of the indexes to characters, we can use the ASCII values of characters.
-So lets say we assign a character to a variable of type int ie. integer lets say int x = 'a'
+So lets say we assign a character to a variable of type int ie. integer lets say int x = 'a'. We are storing a character 'a' in variable x of type integer ie.int , then in this 
+case the character lowercase 'a' is converted into its ASCII value ie. 97 & this ASCII value is stored in variable x.
 
-27:05
+Now the ASCII value of 'a' is 97 & that of 'z' is 122. Now to represent lets say the result of subtraction of two characters ie. 'f' - 'a' , then the ASCII value of 'f' is 102 &
+that of 'a' is 97 , hence the result of subtraction will be 102 - 97 = 5. This is because subtraction ie. - occurs between two integers & hence it converts the characters 'f' & 'a'
+into their respective ASCII values ie. 102 & 97 & then performs the subtraction operation.
+Now similarly if we do,
+'a' - 'a' then we get 0 ie. 'a' - 'a' = 0
+'b' - 'a' then we get 1 ie. 'b' - 'a' = 1
+'c' - 'a' then we get 2 ie. 'c' - 'a' = 2 
+& so on.
+
+Formula - Character - 'a' = Index in HashArray
+
+So for the input string s = "abcdabefc"
+We create a HashArray of size 26 & initialize all values to 0. 
+We iterate through the entire input string , in each iteration we take the current character & do the operation Character - 'a' to get the index in HashArray.
+We then go to that index in HashArray & increment the value present at that index by 1.
+For example - 
+The first character in the input string is 'a' , we do 'a' - 'a' ie. 97 - 97 = 0 , we go to index 0 in HashArray & increment the value present at index  0 by 1, hence value at index 0 = 1.
+The second character in the input string is 'b' , we do 'b' - 'a' ie. 98 - 97 = 1 , we go to index 1 in HashArray & increment the value present at index  1 by 1, hence value at index 1 = 1.
+The third character in the input string is 'c' , we do 'c' - 'a' ie. 99 - 97 = 2 , we go to index 2 in HashArray & increment the value present at index  2 by 1, hence value at index 2 = 1.
+The fourth character in the input string is 'd' , we do 'd' - 'a' ie. 100 - 97 = 3 , we go to index 3 in HashArray & increment the value present at index  3 by 1, hence value at index 3 = 1.
+The fifth character in the input string is 'a' , we do 'a' - 'a' ie. 97 - 97 = 0 , we go to index 0 in HashArray & increment the value present at index  0 by 1, hence value at index 0 = 2.
+The sixth character in the input string is 'b' , we do 'b' - 'a' ie. 98 - 97 = 1 , we go to index 1 in HashArray & increment the value present at index  1 by 1, hence value at index 1 = 2.
+The seventh character in the input string is 'e' , we do 'e' - 'a' ie. 101 - 97 = 4 , we go to index 4 in HashArray & increment the value present at index  4 by 1, hence value at index 4 = 1.
+The eighth character in the input string is 'f' , we do 'f' - 'a' ie. 102 - 97 = 5 , we go to index 5 in HashArray & increment the value present at index  5 by 1, hence value at index 5 = 1.
+The ninth character in the input string is 'c' , we do 'c' - 'a' ie. 99 - 97 = 2 , we go to index 2 in HashArray & increment the value present at index  2 by 1, hence value at index 2 = 2.
+Hence the final HashArray will look like this -
+Index: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+Value: 2 2 2 1 1 1 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0	
+
+If our string contains uppercase letters as well ie. from 'A' to 'Z' alongwith lowercase letters ie. from 'a' to 'z', 
+
+
+29:36
 */
 
 #include<iostream>
