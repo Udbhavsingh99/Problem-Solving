@@ -198,10 +198,84 @@ Hence the final HashArray will look like this -
 Index: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
 Value: 2 2 2 1 1 1 0 0 0 0 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0	
 
-If our string contains uppercase letters as well ie. from 'A' to 'Z' alongwith lowercase letters ie. from 'a' to 'z', 
+If our string contains uppercase letters as well ie. from 'A' to 'Z' alongwith lowercase letters ie. from 'a' to 'z', then we already know that we have 256 characters in total & hence we can 
+just go across & create an array of size 256 ie. from 0 to 255 & this time we won't have to subtract the 'a' from the character to get the index in this HashArray. We can directly use the
+character's ASCII value as the index in HashArray & at each occurrence of that character in the input string we can increment the value present at the corresponding ASCII value index in HashArray 
+by 1. Eg. If we get character 'a' in the input string , then its ASCII value is 97, we go to index 97 in HashArray & increment the value present at index 97 by 1.
+If we get character 'b' in the input string , then its ASCII value is 98, we go to index 98 in HashArray & increment the value present at index 98 by 1.
+Just because we only had lowercase letters in the input string , we created a HashArray of size 26 & mapped the indexes to characters using the formula Character - 'a' = Index in HashArray.
+
+So in the input we are provided with an input string , then we pass the number of characters for which we need to find the occurrences & we pass the characters for which we want to check the  
+occurrences. 
+
+Code - 
+We create a HashArray of size 26 & initialize all values to 0.
+We then iterate the entire input string , in each iteration we take the current character & do the operation Character - 'a' to get the index in HashArray.
+We then go to that index in HashArray & increment the value present at that index by 1.
+We then fetch from the same index using the same formula Character - 'a' = Index in HashArray to get the index in HashArray for the character whose occurrences we need to find.
+
+We created HashArray of size 26 as we only had lowercase letters in the input string. If our input string has both uppercase & lowercase letters then in that case , we know that the total number of 
+character that exist is 256, hence we create a HashArray of size 256 & directly use the ASCII value of character as index in HashArray. While iterating the input string , when we find a character , 
+we directly increment the value present at the index equal to ASCII value of that character in HashArray by 1.
+
+We are taking a bigger size. Unless we are confirmed that we are only having lowercase letters in the input string , we take a bigger size of 256 to accommodate all characters, else we take 26.
+
+Unlike numbers where we had problem/complication of large size of numbers , in characters we don't have that problem as the total/max number of characters is fixed ie. 256 & arrays can accommodate that size
+ie. 256 easily. 
+
+For character hashing always prefer arrays & the common logic is - 
+For lowercase letters only - use size 26 & formula Character - 'a' = Index in HashArray
+For uppercase letters only - use size 26 & formula Character - 'A' = Index in HashArray
+For all characters - use size 256 & directly use ASCII value of character as index in HashArray ie. hash the character using ASCII value of character directly
+
+If we use s[i] directly as index in HashArray, then it automatically converts itself into its ASCII value because hash[] requires an index & index is an integer value , so s[i] is a character & it automatically
+casts/converts itself into its ASCII value to be used as index in HashArray.
+
+So s[i] is character , but the hash[] inside its [] requires/needs an integer, so even if we write a character inside the [] , it will automatically convert/cast itself into its ASCII ie. integer value.
+
+In number hashing when we were trying to hash into the arrays , we saw that we can do at max of 10^7 that also if we declare the array globally. For numbers exceeding this limit ie. 10^7 , like 10^9, 10^12 or
+19^18 we cannot hash it using arrays. That is where in C++ the STL is used. 
+
+In STL we can use map or unordered_map to do hashing for larger numbers.
+
+So for large numbers we were taking an array , instead we will use map or unordered_map from STL.
+
+Map - 
+Lets say we have an array arr = [1, 2, 3, 1, 3, 2]
+In C++ map is a data store. We can represent map using a bucket.
+We know that the map must have a key & a value corresponding to that key.
+In our case the key will be the number present in the input array & the value will be the number of occurrences ie. frequency of that number in the input array.
+Both the key & value in this case will be of type integer.
+If we do map[1] then this will return us 0 as the corresponding value in the map is 0.
+
+For the array :
+1, 2, 3, 1, 3, 2 
+
+we have 1 at the first index , so we do map[1]++. If it doesn't exist in the map, then it will be created with value 0 & then incremented by 1. So map[1] = 1. The map will store
+a key value pair of (1, 1) ie. key = 1 mapped to a value = 1.
+We have 2 at the second index , so we do map[2]++. If it doesn't exist in the map, then it will be created with value 0 & then incremented by 1. So map[2] = 1. The map will store
+a key value pair of (2, 1) ie. key = 2 mapped to a value = 1.
+We have 3 at the third index , so we do map[3]++. If it doesn't exist in the map, then it will be created with value 0 & then incremented by 1. So map[3] = 1. The map will store
+a key value pair of (3, 1) ie. key = 3 mapped to a value = 1.
+We have 1 at the fourth index , so we do map[1]++. It already exists in the map with value 1 & then incremented by 1. So map[1] = 2. The map will update
+the key value pair of (1, 1) to (1, 2) ie. key = 1 mapped to a value = 2.
+We have 3 at the fifth index , so we do map[3]++. It already exists in the map with value 1 & then incremented by 1. So map[3] = 2. The map will update
+the key value pair of (3, 1) to (3, 2) ie. key = 3 mapped to a value = 2.
+We have 2 at the sixth index , so we do map[2]++. It already exists in the map with value 1 & then incremented by 1. So map[2] = 2. The map will update
+the key value pair of (2, 1) to (2, 2) ie. key = 2 mapped to a value = 2.
+
+What we need to do is , map[arr[i]]++ for each index i in the input array.
+
+Now lets say our input array had an extra number 12 ie. 
 
 
-29:36
+
+
+
+
+
+
+37:24
 */
 
 #include<iostream>
@@ -244,4 +318,50 @@ int main()
 
 }
 
+int main_lower_case() 
+{
+	string s;
+	cin>>s;
 
+	//pre-compute
+	int hash[26] = {0};
+	for(int i=0; i<s.size(); i++)
+	{
+		hash[s[i]-'a']++;
+	}
+
+	int q;
+	cin>>q;
+	while(q--)
+	{
+		char ch;
+		cin>>ch;
+		//fetch
+		cout<<hash[ch-'a']<<endl;
+	}
+	return 0;
+}
+
+int main_all_characters()
+{
+	string s;
+	cin>>s;
+
+	int hash[256]= {0};
+
+	for(int i = 0; i< s.size(); i++)
+	{
+		hash[s[i]]++;
+	}
+
+	int q;
+	cin>>q;
+	while(q--)
+	{
+		char ch;
+		cin>>ch;
+		//fetch
+		cout<<hash[ch]<<endl;
+	}
+	return 0;
+}
