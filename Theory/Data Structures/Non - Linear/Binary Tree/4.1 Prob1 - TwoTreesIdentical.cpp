@@ -78,15 +78,29 @@ Similarly the left child node for node with value 3 is node with value 6 for tre
 As the left child node for the node with value 3 are same ie. node with value 6 for both the trees ie. tree 1 & tree 2. Then the left & right subtree for the node with value 6 should have all the values same.
 Now the node with value 6 has no child nodes in tree 1. Hence we return to the parent node ie. node with value 3.
 Similarly the node with value 6 has no child nodes in tree 2. Hence we return to the parent node ie. node with value 3.
+Now as both the left & right subtree for the node with value 6 is similar in tree 1 & tree 2 ie. in both tree 1 & tree 2 the node with value 6 has no left child node nor right child node , then we return 1 for the
+left & right child node/subtree each for node with value 6. We return this value 1 to the parent node of node with value 6 ie. node with value 3 implying that the left subtree/child node of node with value 3 ie. in this case node with
+value 6 is similar/identical in both tree 1 & tree 2.
 Now we have completed left subtree traversal for node with value 3 in tree 1 & tree 2. We now traverse the right subtree for node with value 3.
 So the right child node for node with value 3 is node with value 7 for tree 1.
 Similarly the right child node for node with value 3 is node with value 7 for tree 2.
 As the right child node for the node with value 3 are same ie. node with value 7 for both the trees ie. tree 1 & tree 2. Then the left & right subtree for the node with value 7 should have all the values same.
 Now the node with value 7 has no child nodes in tree 1. Hence we return to the parent node ie. node with value 3.
 Similarly the node with value 7 has no child nodes in tree 2. Hence we return to the parent node ie. node with value 3.
-Now the traversal for both the left & right subtree of node with value 3 has been completed. Hence we return to the parent node of node with value 3 ie.
+Now as both the left & right subtree for the node with value 7 is similar in tree 1 & tree 2 ie. in both tree 1 & tree 2 the node with value 7 has no left child node nor right child node , then we return 1 for the
+left & right child node/subtree each for node with value 7. We return this value 1 to the parent node of node with value 7 ie. node with value 3 implying that the right subtree/child node of node with value 3 ie. in this case node with
+value 7 is similar/identical in both tree 1 & tree 2.
+Now the traversal for both the left & right subtree of node with value 3 has been completed, we return 1 signifying that the right subtree of node with value 1 ie. root node, is identical in both tree 1 & tree 2. Hence we return to the parent node of node with value 3 ie.
 the root node ie. node with value 1.
-The traversal for both the left & right subtree for the node with value 1 ie. the root node is complete. Hence the tree traversal is complete & both the trees are similar/identical.
+The traversal for both the left & right subtree for the node with value 1 ie. the root node is complete. Hence the tree traversal is complete & both the trees are similar/identical as the final value is 1.
+At each step we take the AND between the value returned by the left subtree/child node of a particular node & the value returned by the right subtree/child node of a particular node.
+
+We check the value of the present node in both tree 1 & tree 2. Then we check the left child node/subtree of the present node & then we check the right child node/subtree of the present node. If the nodes present in both the trees are same/similar
+then at that particular step we return 1 indicating that the same node ie. node has same value in both the trees. We return 0 if the nodes are different ie. node has different value in both the trees. At each step we take the AND between the values
+returned by the values returned by the left & right subtree ie. left & right child nodes.
+
+Now we do the AND ie. && operation because , if the value at any particular node is not equal ie. different in tree 1 & tree 2, then in that case instead of returning 1, we return 0 & return ie. we don't need to check the value of any other further
+nodes in the tree. Now if the value at a particular given node is equal , then in that case we check for the equality of the left subtree of that node & the right subtree of that node.
 
 
 7:37
