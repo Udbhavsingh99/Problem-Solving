@@ -266,7 +266,9 @@ the key value pair of (2, 1) to (2, 2) ie. key = 2 mapped to a value = 2.
 
 What we need to do is , map[arr[i]]++ for each index i in the input array.
 
-Now lets say our input array had an extra number 12 ie. 
+Now lets say our input array had an extra number 12 at the last index , then we would have done map[12]++ as 12 is present on the last ie. seventh index. If it doesn't exist in the 
+map, then it will be created with value 0 & then incremented by 1. So map[12] = 1. The map will store a key value pair of (12, 1) ie. key = 12 mapped to a value = 1.
+
 
 
 
