@@ -269,15 +269,45 @@ What we need to do is , map[arr[i]]++ for each index i in the input array.
 Now lets say our input array had an extra number 12 at the last index , then we would have done map[12]++ as 12 is present on the last ie. seventh index. If it doesn't exist in the 
 map, then it will be created with value 0 & then incremented by 1. So map[12] = 1. The map will store a key value pair of (12, 1) ie. key = 12 mapped to a value = 1.
 
+Had we used array hashing approach , it would still have ended up taking array of size 13 for array hashing for numbers till 12.
+But in our case for hashing using map we are only storing values/elements that are required, in our case the required values/elements that we need to store in our map are 1, 2, 3, 12,
+hence the total values/elements stored is 4.
+In array hashing, we had to declare an array of size 13 if the maximum value present in the array was 12, in order to get the 12th index. This is where map is slightly beneficial & it
+takes a little less memory because it will just store the elements that are required.
+
+If we do map[4] , then its not there in the map & hence will return us 0.
+
+We take n as input which tells us the size of the input array, we take the input array , we then take the number of queries/elements that we want to find the occurrence of as input &
+then we finally take the queries ie. elements that we want to query themselves.
+
+All the values in the map are stored in the sorted order. We can iterate over the map to verify this.
+We can do pre-computation while taking the input array itself.
+
+Now map can be used for hashing characters in string as well. The key in this case would be the character & the value in this case would be
+the frequency ie. value of type integer. This means the map will be map<char, int> where in the map<Character, Frequency of Character> .
+So instead of using array for String hashing, we can go ahead & use map for String hashing ie. we can say map[Character]++ & this will not be
+converting into character.
+
+The time complexity when we use the map ie. for both storing & fetching operation in a map takes logN in all cases be it best, average or worst.
+In all cases it takes logN.
+
+Based on what we are trying to hash we store that as the key & the frequency/number of occurrences of that particular character/element as the
+value.
+
+Unordered map -
+Even if we use unordered_map , the program runs fine.
+Unordered map implies that unlike map where all the values are stored in a sorted order , in an unordered map the values are stored in an unsorted
+order. The order of the output will change with each compiler.
+
+The advantage of using unordered map is that when we are storing some value in the unordered map & when we are fetching some value from the unordered map ,
+the average & the best time complexity is O(1) ie. a constant one. In most of the cases we get the average time complexity which is O(1).
+In the worst case the time complexity for storing & fetching values from the unordered_map is O(N) ie. a linear one.
 
 
 
 
 
-
-
-
-37:24
+44:13
 */
 
 #include<iostream>
@@ -364,6 +394,80 @@ int main_all_characters()
 		cin>>ch;
 		//fetch
 		cout<<hash[ch]<<endl;
+	}
+	return 0;
+}
+
+int main_hash()
+{
+	int n;
+ 	cin>>n;
+
+ 	int arr[n];
+ 	for(int i = 0; i<n; i++)
+	{
+		cin>>arr[i];
+	}
+
+	//Precompute
+	map<int,int>Hash;
+	for(int i = 0; i<n; i++)
+	{
+		Hash[arr[i]]++;
+	}
+
+
+	//Iterate in the map
+	for(auto it : Hash)
+	{
+		cout<<it.first<<"->"<<it.second<<endl;
+	}
+
+    int q;
+    cin>>q;
+	while(q--)
+	{
+		int number;
+		cin>>number;
+		//Fetch
+		cout<<Hash[number]<<endl;
+	}
+	return 0;
+}
+
+int main_hash_unordered()
+{
+	int n;
+ 	cin>>n;
+
+ 	int arr[n];
+ 	for(int i = 0; i<n; i++)
+	{
+		cin>>arr[i];
+	}
+
+	//Precompute
+	unordered_map<int,int>Hash;
+	for(int i = 0; i<n; i++)
+	{
+		Hash[arr[i]]++;
+	}
+
+
+	//Iterate in the map
+	for(auto it : Hash)
+	{
+		cout<<it.first<<"->"<<it.second<<endl;
+	}
+
+    int q;
+    cin>>q;
+	while(q--)
+	{
+		int number;
+		cin>>number;
+		//Fetch
+		cout<<Hash[number]<<endl;
 	}
 	return 0;
 }
