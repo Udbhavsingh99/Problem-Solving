@@ -301,13 +301,15 @@ order. The order of the output will change with each compiler.
 
 The advantage of using unordered map is that when we are storing some value in the unordered map & when we are fetching some value from the unordered map ,
 the average & the best time complexity is O(1) ie. a constant one. In most of the cases we get the average time complexity which is O(1).
-In the worst case the time complexity for storing & fetching values from the unordered_map is O(N) ie. a linear one.
+In the worst case the time complexity for storing & fetching values from the unordered_map is O(N) ie. a linear one. Here the term N implies the number
+of terms/elements in the map. The time complexity is directly related to the number of elements present in the map. Depending on the number of elements in the
+map , the time taken ie.
 
 
 
 
 
-44:13
+45:43
 */
 
 #include<iostream>
