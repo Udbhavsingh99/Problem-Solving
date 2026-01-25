@@ -303,13 +303,68 @@ The advantage of using unordered map is that when we are storing some value in t
 the average & the best time complexity is O(1) ie. a constant one. In most of the cases we get the average time complexity which is O(1).
 In the worst case the time complexity for storing & fetching values from the unordered_map is O(N) ie. a linear one. Here the term N implies the number
 of terms/elements in the map. The time complexity is directly related to the number of elements present in the map. Depending on the number of elements in the
-map , the time taken ie.
+map , the time taken ie. time complexity will be calculated.
+
+The average & best case will be O(1) & the majority of scenarios will fall under this category.
+In very minor cases we will get worst case scenarios . we might get time complexity of O(N) in very rare cases. 
+In this scenario our code will take O(N^2) time because we are doing hashing inside a for loop which iterates N times. 
+As hashing itself takes O(N) time in worst case & we are doing this hashing operation N times inside a for loop , hence 
+the total time complexity will be O(N^2) in worst case.
+
+Most of the times we will first try to solve the problem using unordered_map if it fails ie. it gives us Time Limit Exceeded , then we switch back to map. But the
+first preference should be unordered_map because the worst case ie. O(N) happens very rarely. 
+The worst case happens when there are a lot of collisions in the hashing function.
+
+We know that we cannot do hashing on arrays larger than the size 10^7
+
+The map data structure is created using 3 methods - 
+1> Division method
+2> Folding method
+3> Mod Square method
+
+We know that we can design an array hash, but for numbers like 10^18 ,  how do we store it ?
+
+Division method - 
+Imagine we have numbers in array like [2, 5, 16, 28, 139]
+Now in this scenario we can do array hashing , as the maximum number is small ie. 139. Hence,  we can go ahead & create an array of size 140 containing indexes from 
+0 to 139 & then we can hash the values.
+
+Lets assume that for the time being we cannot create an array of size greater than 10.
+In this scenario we can use the division method.
+We can only create an array of size 10 ie. from index 0 to 9. Hence we can only store values from 0 to 9 in this array.
+
+Now using the division method , we will take the value from the array by iterating over it, we then divide the value from the array by 10 ie. value % 10, then at the resultant
+So for the given input array we do, 
+arr[i]%10 ie.
+2%10 = 2, we go to index 2 in the HashArray & increment the value present at index 2 by 1
+5%10 = 5, we go to index 5 in the HashArray & increment the value present at index 5 by 1
+16%10 = 6, we go to index 6 in the HashArray & increment the value present at index 6 by 1
+28%10 = 8, we go to index 8 in the HashArray & increment the value present at index 8 by 1
+139%10 = 9, we go to index 9 in the HashArray & increment the value present at index 9 by 1
+
+Then the array is 
+
+Index| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+Value  0   0   1   0   0   1   1   0   1   1
+
+So we have used the division method to trim down the numbers & somehow array hash the input array into a HashArray of size 10.
+
+If we want to check the occurrences of number 139 in the input array , then we do 139%10 = 9 , we go to index 9 in HashArray & fetch the value present at index 9 ie. 1.
+Here 1 is the number of occurrences of 139 in the input array.
+
+Lets say we have an input array as - 
+
+[2, 5, 16, 28, 139, 38, 48, 28, 18]
+
+What if on doing arr[i]%10 , we get the same index for two different numbers in the input array.
 
 
 
 
 
-45:43
+
+
+52:00
 */
 
 #include<iostream>
