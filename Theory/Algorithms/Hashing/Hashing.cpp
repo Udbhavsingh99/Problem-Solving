@@ -2,7 +2,7 @@
 Initial Problem -
 How many times a particular value occurs in the array.
 
-First Apprroach -
+First Approach -
 We compare the input value with value present at each index in the array.
 For this we create a counter variable & initialize to 0 , we then run a for loop iterating from 0 to the
 size of the array & in each iteration we compare the input variable to be searched with the value present at current
@@ -357,14 +357,46 @@ Lets say we have an input array as -
 [2, 5, 16, 28, 139, 38, 48, 28, 18]
 
 What if on doing arr[i]%10 , we get the same index for two different numbers in the input array.
+We create the HashArray of size 10 in vertical format - 
+
+0
+1
+2 - 2
+3
+4
+5 - 5
+6 - 16
+7
+8 - 18 -> 28 -> 28 -> 38 -> 48 
+9 - 139
+
+Then for input array [2, 5, 16, 28, 139, 38, 48, 28, 18] , we do arr[i]%10 ie.
+2%10 = 2, we go to index 2 in the HashArray & increment the value present at index 2 ,  we have one 2 in input array
+5%10 = 5, we go to index 5 in the HashArray & increment the value present at index 5 ,  we have one 5 in input array
+16%10 = 6, we go to index 6 in the HashArray & increment the value present at index 6 ,  we have one 16 in input array
+28%10 = 8, we go to index 8 in the HashArray & increment the value present at index 8 , we have one 28 in input array
+139%10 = 9, we go to index 9 in the HashArray & increment the value present at index 9 , we have one 139 in input array
+38%10 = 8 , now we have a collision factor as both 28%10 & 38%10 give us index 8 , we cannot directly store it , hence 
+we store it in a chaining manner ie. we create a linked list for values the modulo of which we get 8
+48%10 = 8 , we go to the linked list that contains chain for values%10 = 8 , we append 48 to the back of the linked list
+28%10 = 8 , we go to the linked list that contains chain for values%10 = 8 , we append another 28 to the linked list after
+the previous 28 that we appended.
+18%10 = 8 , we go to the linked list that contains chain for values%10 = 8 , we append 18 to the starting of the linked list
+before the first 28 that we appended.
+We store the numbers in some chaining that is known as linear chaining. This is implemented using linked lists.
+
+Now if we want to check the occurrence of a particular value in the input array lets say 28 , then we do value%10 ie. 28%10 , 
+which is 8 , then we go to the value 8 in HashArray. We know that there will be limited numbers & we know that the numbers will
+be in sorted order. Then using search algorithm like Binary Search we can find that there are 2 occurrences of 28 in the input
+array.
+We can keep the HashArray in limited memory storage even for large values in input array.
 
 
 
 
 
 
-
-52:00
+52:44
 */
 
 #include<iostream>
