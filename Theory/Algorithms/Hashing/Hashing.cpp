@@ -391,6 +391,13 @@ be in sorted order. Then using search algorithm like Binary Search we can find t
 array.
 We can keep the HashArray in limited memory storage even for large values in input array.
 
+Collision -
+In order to find out how many times 28 appeared in our input array , we went to 8 & then we figured out that 28 appears twice , this is because
+it was chained in a sorted order.
+
+But if we had a huge number , then the chain could become ultra huge , then we wouldn't have used the division method. We would've use some
+method that is mixture of everything.
+
 
 
 
