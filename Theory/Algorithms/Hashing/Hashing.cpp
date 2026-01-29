@@ -398,12 +398,21 @@ it was chained in a sorted order.
 But if we had a huge number , then the chain could become ultra huge , then we wouldn't have used the division method. We would've use some
 method that is mixture of everything.
 
+Lets say that we are given an input array with values , 
+
+18 , 28 , 38 , 48 , .... , 1008
+
+All the values in the input array are ending with value 8. 
+Then in the chain on value 8 , all the values of the entire input array will be present.
+Apparently all the other memories are unused & at 8 we have all the numbers.
+So a huge chain is present at value 8 , collision has happened for all the numbers in the input array.
+Everyone/every number went to the same index/hash space ie. 8. Finding the occurrence of a particular number in this
+case will take a lot of time.
 
 
 
 
-
-52:44
+56:00
 */
 
 #include<iostream>
