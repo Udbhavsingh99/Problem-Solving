@@ -409,6 +409,11 @@ So a huge chain is present at value 8 , collision has happened for all the numbe
 Everyone/every number went to the same index/hash space ie. 8. Finding the occurrence of a particular number in this
 case will take a lot of time.
 
+Irrespective of the hash that is being used internally, it ends up that all our keys end up at the same hash value/index.
+This is when the worst case scenario happens & we get time complexity as O(N). This is an extremely rare scenario.
+
+Under division method we do normal simple division followed by
+
 
 
 
