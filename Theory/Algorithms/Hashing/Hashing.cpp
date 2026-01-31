@@ -412,8 +412,11 @@ case will take a lot of time.
 Irrespective of the hash that is being used internally, it ends up that all our keys end up at the same hash value/index.
 This is when the worst case scenario happens & we get time complexity as O(N). This is an extremely rare scenario.
 
-Under division method we do normal simple division followed by
+Under division method we do normal simple division followed by linear chaining for multiple values/keys/results landing at same index.
+The key can be an integer, double, string, character or even a pair of integers. Any data structure/data type can be used as key in map. 
 
+When it comes to unordered_map, we can only have individual data types as keys. We cannot have complex data structures. 
+So something like pair<int, int> cannot be used as key in unordered_map but can be used as key in map.
 
 
 
