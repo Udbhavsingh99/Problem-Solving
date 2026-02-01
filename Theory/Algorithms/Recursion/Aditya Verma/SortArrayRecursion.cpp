@@ -218,7 +218,44 @@ We then store the last/largest element in the input array/vector in a temp varia
 Now we will again call the insert() method/function on this smaller input array/vector to insert the element at the correct position in this smaller input array/vector. We call the insert() method/function recursively on this smaller input array/vector & as the second argument we pass the element
 that we want to insert in this smaller input array/vector.
 
+We call the insert() method & to it we pass the input array/vector after removing the last element ie. smaller input as the first argument & the value temp that we got as input to the insert() method as the second argument.
+
+So initially our input array was 0, 1, 5 & the element to be inserted was 2.
+We removed the last element 5 from the input array to make it smaller ie. 0, 1 & stored the removed last element 5 in a temp variable val.
+Now we want to insert the element 2 in this smaller input array/vector 0, 1.
+So we make a recursive call to the insert() method/function with the smaller input array/vector 0, 1 as the first argument & the element 
+to be inserted ie. 2 as the second argument ie. insert({0,1}, 2)
+The recursive call to insert() method/function will return the sorted array/vector 0, 1, 2 as output. 
+Now we need to insert the 5 that we removed in previous step at the correct position in this sorted array/vector 0, 1, 2 such that the final array remains sorted after inserting the element 5.
+So we insert the element 5 at the last index of the sorted array/vector 0, 1, 2 to get the final sorted array/vector 0, 1, 2, 5 this is because 5 is the largest element in the original input array/vector 0, 1, 5.
+
+We do this in induction step of our insert() method/function. We do vector push back ie. v.push_back(var);
+which add the removed last element var (in this case 5) at the last index of the sorted array/vector returned by the recursive call
+to the insert() method/function.
+
+Sum up - 
+Lets say we are provided an array with values - 0, 1, 5, 2
+we need to sort this input array. The sorted array will be 0, 1, 2, 5
+So we call the sort() method/function on a smaller input , we do this by removing the last element 2 from the input array to make it smaller ie. 0, 1, 5
+Then we sort the smaller input array ie. 0, 1, 5 using the sort() method/function recursively. This will return the sorted array ie. 0, 1, 5
+Then we need to insert the removed last element 2 at the correct position in this sorted array ie. 0, 1, 5 such that the final array remains sorted after inserting the element 2.
+
+This is done using induction. In the induction step we insert the value 2 that we removed earlier at the correct position in the sorted array ie. 0, 1, 5 such that the final array remains sorted after insertion.
+In order to do this we create a new method/function named insert() that will take an input array/vector (in this case the smaller input array/vector) as the first argument & an element/value to be inserted in this input array/vector as the second argument
+& will insert this value 2 in the correct position in the input array/vector such that the order of the input array/vector is maintained ie. post insertion of the element in the input array/vector, all elements in the input array/vector will be sorted in ascending order.
+
+Again in the insert() method/function we make the input smaller by removing the last element from the input array/vector passed as the first argument to the insert() method/function. In our case we remove the value
+5 from the input array/vector ie. 0, 1, 5 to make it smaller ie. 0, 1. We store this removed last element 5 in a temp variable var.
+Then we call the insert() method/function recursively on this smaller input array/vector & as the second argument we pass the element to be inserted ie. 2
+This insert() method/function call will return the sorted array/vector ie. 0, 1, 2
+
+Now the induction step for sort() method is the insert() method , the induction step for insert() method is the vector push back ie. v.push_back(var); 
+The value 5 that we removed earlier & stored separately in temp variable var is added at the last index of the sorted array/vector ie. 0, 1, 2 to get the final sorted array/vector 
+ie. 0, 1, 2, 5 
+This will give us the sorted vector.
 
 
-23:15
+
+
+25:55
 */
