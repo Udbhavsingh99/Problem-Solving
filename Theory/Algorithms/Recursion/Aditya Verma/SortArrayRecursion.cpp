@@ -254,6 +254,29 @@ The value 5 that we removed earlier & stored separately in temp variable var is 
 ie. 0, 1, 2, 5 
 This will give us the sorted vector.
 
+The induction step of sort() method is the insert() method & the induction step of insert() method is the vector push back method ie. v.push_back() method
+We might need to write multiple recursive functions for induction steps. As we write the recursive functions for the induction step
+we will reach a simple induction step.
+
+We create a method sort() where in we pass the vector to be sorted by reference. Whatever change we will do on this vector in our function , will reflect in the
+original vector inside the main() method. Both the vectors are refering to the same vector. If we sort the vector passed as reference inside the sort() method then
+the original vector will get sorted as well. No new vector is created.
+
+If we pass it without reference, then the vector that we pass as an argument to the sort() method will be a newly created array & the changes that we do on this array will
+not reflect in the original array & will only be there inside the sort() method.
+
+Now the base condition of the sort() method is that if the input array has a single element ie. vector size is 1 (v.size() == 1) , then in that case the vector is already
+sorted.
+
+If the input array is 0, 1, 5, 2 , then in that case we remove the last element from the input array & then we sort the remaining smaller input array. The last element that
+we remove, we store that inside a temporary variable. We do that by creating a variable temp & then using the last index from the vector to access the last element ie.
+int temp = v[v.size() - 1]
+Now we will pop the last element from the input array to make it smaller ie. vector pop back (v.pop_back())
+Now in order to sort the smaller input array , we will pass this smaller input array as the first argument to the sort() method.
+
+
+
+
 
 
 
