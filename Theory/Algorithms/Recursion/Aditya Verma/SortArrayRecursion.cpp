@@ -272,7 +272,14 @@ If the input array is 0, 1, 5, 2 , then in that case we remove the last element 
 we remove, we store that inside a temporary variable. We do that by creating a variable temp & then using the last index from the vector to access the last element ie.
 int temp = v[v.size() - 1]
 Now we will pop the last element from the input array to make it smaller ie. vector pop back (v.pop_back())
-Now in order to sort the smaller input array , we will pass this smaller input array as the first argument to the sort() method.
+Now in order to sort the smaller input array , we will pass this smaller input array as an argument to the sort() method.
+Now the sort() method with the smaller input array will return the sorted smaller input array ie. 0, 1, 5
+Now we need to insert the removed last element (which is stored in temp variable) ie. 2 at the correct position in this sorted array ie. 0, 1, 5 such that the final array remains
+sorted after inserting the element 2. This will be handled by the insert() method.
+We make a call to the insert() method & to it we pass the sorted smaller input array ie. 0, 1, 5 as the first argument & the element to be inserted ie. 2 as the second argument.
+
+Now we need to write an insert() method for the induction step. In the insert() method we pass the vector as a reference as the first argument & the element to be inserted as the 
+second argument.
 
 
 
@@ -280,5 +287,6 @@ Now in order to sort the smaller input array , we will pass this smaller input a
 
 
 
-25:55
+
+28:58
 */
