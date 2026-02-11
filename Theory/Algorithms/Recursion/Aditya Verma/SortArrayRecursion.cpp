@@ -280,13 +280,58 @@ We make a call to the insert() method & to it we pass the sorted smaller input a
 
 Now we need to write an insert() method for the induction step. In the insert() method we pass the vector as a reference as the first argument & the element to be inserted as the 
 second argument.
+Now the base condition for the insert() method is that if the size of the input vector is 0 ie. empty or if the last element in the input vector is less than or equal to the element
+that we want to insert in the input vector, then we can directly insert the element at the last index of the input vector without changing the position/index of any other element in the input vector
+& return from the insert() method.
 
+In case lets say we want to insert value 2 inside input array 0, 1, 5. Then in this case we decrease the size of the input array by removing the last element 5 from the input array to make it 
+smaller ie. 0, 1. We store this removed last element 5 in a temp variable var & pop the last value from the input array/vector. Then we call the insert() method using this smaller input array ie. 0, 1 as the first argument & the element to 
+be inserted ie. 2 as the second argument. 
 
+Once the insertion is complete we get vector/array 0, 1, 2 . Now we need to insert the removed last element 5 at the correct position in this sorted array/vector 0, 1, 2 such that the final array remains sorted after inserting the element 5.
+So we insert the element 5 at the last index of the sorted array/vector 0, 1, 2 to get the final sorted array/vector 0, 1, 2, 5 this is because 5 is the largest element in the original input array/vector 0, 1, 5.
+We push back the value stored in temp variable var (which is 5) at the last index of the sorted array/vector 0, 1, 2 to get the final sorted array/vector 0, 1, 2, 5 this is because 5 is the largest element in 
+the original input array/vector 0, 1, 5.
 
+Then we return.
 
-
-
+So our sort() method has the base condition , the hypothesis & the induction step which is the insert() method. The insert() method also has its own base condition, hypothesis & induction step which is the vector push back method.
 
 
 28:58
 */
+
+#include<iosteram>
+#include<vector>
+
+using namespace std;
+
+int sortVector(vector<int> v)
+{
+  if(v.size() == 1)
+  {
+    return;
+  }
+
+  int temp = v[v.size() - 1];
+  v.pop_back();
+  sort(v);
+  insert(v, temp);
+}
+
+int insert(vector<int> &v, int element)
+{
+  if(v.size() == 0 || v[v.size() - 1] <= element)
+  {
+    return;
+  }
+
+  int val = v.[v.size() - 1];
+  v.pop_back();
+
+  insert(v, element);
+
+  v.push_back(val);
+
+  return;
+}
