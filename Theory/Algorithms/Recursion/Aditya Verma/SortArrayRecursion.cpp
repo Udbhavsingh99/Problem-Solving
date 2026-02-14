@@ -315,7 +315,7 @@ int sortVector(vector<int> v)
 
   int temp = v[v.size() - 1];
   v.pop_back();
-  sort(v);
+  sortVector(v);
   insert(v, temp);
 }
 
