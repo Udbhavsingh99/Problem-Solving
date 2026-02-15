@@ -41,8 +41,20 @@ ie. 0, 1, 5.
 
 We then call the sort() method recursively with the smaller input stack ie. 0, 1, 5. This will give us the sorted stack with values 5, 1, 0 as output.
 Now we need to insert the temp variable value ie. 2 that we removed earlier in order to make the input stack smaller, back in the sorted stack with values
-5, 1, 0. We need to insert the temp variable value ie. 2 in the correct position 
+5, 1, 0. We need to insert the temp variable value ie. 2 in the correct position such that after inserting the temp variable value ie. 2 the sorted stack
+with values 5, 1, 0 remains sorted. 
 
-05:50
+Now in the insert() method for array sorting, we take 2 arguments - the sorted array/vector 5, 1, 0 & the temp variable value ie. 2 that we need to insert in 
+the sorted array/vector 1, 5, 0.
+Then we store the last element of the sorted array/vector ie. 0 in a temp variable & then we pop the last element from the array/vector to make the 
+sorted array/vector smaller ie. 5, 1.
+Then we recursively call the insert() method with the smaller sorted array/vector ie. 5, 1 & the temp variable value ie. 2 that we need to insert in the sorted array/vector
+5, 1.
+
+
+
+
+
+06:20
 
 */
