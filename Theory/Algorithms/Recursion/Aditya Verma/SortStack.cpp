@@ -61,7 +61,13 @@ the temp variable value ie. 2. Hence the output of the recursive call to the ins
 Then we will insert the largest value in the input array/vector ie. 5 that we removed earlier in order to make the sorted array/vector smaller, back in the sorted array/vector with values 0, 1, 2.
 This will give us the sorted array/vector with values 0, 1, 2, 5 as output.
 
-Now in the case of stack sorting
+Now in the case of stack sorting , we need to insert the value inside the stack method using the insert() method. We pass the sorted stack as the first argument ie. 5, 1, 0 as the first argument.
+We pass the value that we want to insert() into this sorted stack as the second argument to the insert() method.
+
+The purpose of the insert() method is to insert the value that we pass into the sorted stack that we pass as the first argument to the insert() method in such a way that the entire resultant stack
+remains sorted.
+
+Hence, we remove the largest element from the stack ie. the topmost element present in our stack , in order to decrease the size of the stack.
 
 
 07:34
