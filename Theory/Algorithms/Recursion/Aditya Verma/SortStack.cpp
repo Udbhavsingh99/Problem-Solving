@@ -61,9 +61,72 @@ the temp variable value ie. 2. Hence the output of the recursive call to the ins
 Then we will insert the largest value in the input array/vector ie. 5 that we removed earlier in order to make the sorted array/vector smaller, back in the sorted array/vector with values 0, 1, 2.
 This will give us the sorted array/vector with values 0, 1, 2, 5 as output.
 
-Now in the case of stack sorting
+Now in the case of stack sorting,  we create an insert() method that will take the sorted stack with values 5, 1, 0 as the first argument & the value to be inserted in this sorted stack ie. 2 as the second argument.
+This insert() method will insert the value to be inserted in the sorted stack in the correct position such that after insertion the sorted stack remains sorted ie. the insert() method will return us the sorted stack with 
+values 5, 2, 1, 0 as output.
+
+So we store the 5 ie. the largest value in the sorted input stack in a temp variable & then we pop the 5 from the sorted input stack to make the sorted input stack smaller ie. 1, 0.
+Then we recursively call the insert() method with the smaller sorted input stack ie. 1, 0 & the value to be inserted in this sorted stack ie. 2 as arguments.
+Now the insert() method will insert the value to be inserted in the sorted stack ie. 2 that we pass as second argument, in the correct position in the smaller sorted stack ie. 1, 0 that we pass as first argument, such that 
+after inserting the value to be inserted in the sorted stack ie. 2, the smaller sorted stack ie. 1, 0 remains sorted. Hence the output of the recursive call to the insert() method with the smaller sorted input stack ie. 1, 0 & the value to be inserted in this sorted stack ie. 2 as arguments will be the sorted stack with values 2, 1, 0.
+Then we will insert/push the largest value in the input stack ie. 5 that we removed earlier in order to make the sorted input stack smaller, back in the sorted input stack with values 2, 1, 0. This will give us the sorted stack with values 5, 2, 1, 0 as output.
+
+If there is a single element in our array then the array is already sorted & hence we return the array as it is without doing anything. Similarly if there is a single element in our stack then the stack is already sorted & hence we return the stack as it is without doing anything.
+This is the base case for both array sorting as well as stack sorting for the sort() method.
+
+The base condition for insert() method for array sorting is that if the size of the input array/vector is 0 or if the value/element passed as the second argument to the insert() method is greater than the last/largest element present in the input array/vector passed as the first argument to the insert() method, then we directly 
+insert/pushback the element at the last index/position in the input array/vector. 
+
+The base condition for insert() method for stack sorting is that if the size of the input stack is 0 or if the value/element passed as the second argument to the insert() method is greater than the top element present in the input stack passed as the first argument to the insert() method, then we directly push the element at the top of 
+the input stack.
+
+In the vector/array sorting problem, we passed the vector/array to be sorted to the sort() method , in case of stack we will pass the stack to be sorted to the sort() method.
+Our base case in vector/array sorting problem is that if the size of the input array/vector is 1 , then we return the array/vector as it is without doing anything.
+In the case of stack sorting problem, our base case is that if the size of the input stack is 1 , then we return the stack as it is without doing anything.
+We stored the last/largest element in the input array/vector in a temp variable to later add it again in the sorted output array/vector, then we removed/popped the last element from the input array/vector to make the input array/vector smaller.
+Similarly in the case of stack sorting problem, we stored the top element in the input stack in a temp variable to later add it again in the sorted output stack, then we removed/popped the top element from the input stack to make the input stack smaller.
+We then make the recursive call to the sort() method with the smaller input stack as first argument & the temp variable ie. the largest element in the input stack as second argument.
+
+Now in the insert() method the first argument which was earlier the sorted array/vector, is now the sorted stack & the second argument is the value to be inserted in the sorted stack.
+The base condition for insert() method for stack sorting is that if the size of the input stack is 0 or if the value/element passed as the second argument to the insert() method is greater than the top element present in the input stack passed as the first argument to the insert() method, then we directly push the element at the top of
+the input stack.
+We then store the largest/top value in the input stack in a temp variable to later add it again in the sorted output stack, then we pop the top element from the input stack to make the input stack smaller.
+We then recursively call the insert() method with the smaller sorted input stack as first argument & the value to be inserted in this sorted stack as second argument. 
+Then we will insert/push the largest/top value in the input stack that we removed earlier in order to make the sorted input stack smaller, back in the sorted input stack & this will give us the entire sorted stack.
 
 
-07:34
+08:30
 
 */
+
+#include<iostream>
+#include<stack>
+
+using namespace std;
+
+int sortStack(stack<int> s)
+{
+    if(s.size() == 1)
+    {
+        return;
+    }
+    int temp = s.top();
+    s.pop();
+    sortStack(s);
+    insert(s, temp);
+}
+
+int insert(stack<int> &s, int element)
+{
+    if(s.size() == 0 || s.top() <= element)
+    {
+        s.push(element);
+        return;
+    }
+
+    int val = s.top();
+    s.pop();
+    insert(s, element);
+    s.push(val);
+    return;
+}

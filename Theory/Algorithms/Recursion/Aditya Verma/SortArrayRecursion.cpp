@@ -301,7 +301,7 @@ So our sort() method has the base condition , the hypothesis & the induction ste
 28:58
 */
 
-#include<iosteram>
+#include<iostream>
 #include<vector>
 
 using namespace std;
@@ -323,10 +323,11 @@ int insert(vector<int> &v, int element)
 {
   if(v.size() == 0 || v[v.size() - 1] <= element)
   {
+    v.push_back(element);
     return;
   }
 
-  int val = v.[v.size() - 1];
+  int val = v[v.size() - 1];
   v.pop_back();
 
   insert(v, element);
