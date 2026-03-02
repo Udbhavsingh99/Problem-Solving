@@ -39,6 +39,8 @@ We need to delete this element from the stack & print the remaining elements in 
 When we approach a recursion problem , first we try to think about decision making ie. we try to take decisions. In case we are unable to determine the 
 decision we want to take , then we try to make the size of the input smaller & then we try to solve the problem for the smaller input.
 
+In this question we are unable to determine the decision we want to take , so we will try to make the size of the input smaller & then we will try to solve the problem for the smaller input.
+
 
 3:45
 
