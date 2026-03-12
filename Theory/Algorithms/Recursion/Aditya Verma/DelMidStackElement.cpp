@@ -41,8 +41,37 @@ decision we want to take , then we try to make the size of the input smaller & t
 
 In this question we are unable to determine the decision we want to take , so we will try to make the size of the input smaller & then we will try to solve the problem for the smaller input.
 
+Whenever we think in terms of taking a decision , then we design a recursive tree all the way to the leaf node.
+Whenever we think in terms of making the size of the input smaller , then we only think about making the input smaller till the next step , not beyond that.
 
-3:45
+If we think in terms of making the input smaller , then we need to design a recursive solution. While in the case of decision making we need to design a recursive tree.
+
+When we design a recursive solution in order to make the input smaller , then it has 3 parts - the base condition, hypothesis & the induction step.
+
+We'll start with the hypothesis. In hypothesis we design the main functioning/operation of the method ie. how the method operates. 
+Based on how the method operates ie. the hypothesis , we will design the base condition & the induction step.
+
+Lets say we have an input stack with elements 5, 4, 3, 2, 1 (top to bottom) & we need to delete the middle element from this stack. The middle element is the 3rd element from the top of the stack which is the element 3.
+We pass this input stack to the solve() method as the first argument. Alongwith this we also pass the middle element ie. 3 in this case as the second argument to the solve method.
+
+The solve() method will first remove the 3rd element from top in the input stack ie. 3 & then it will return us a stack with the remaining elements ie. 5, 4, 2, 1 (top to bottom).
+
+Now in the hypothesis we will use smaller input for the solve() method.
+In order to make the input smaller ,  we will store the top most element from the input stack in a variable & then we will pop the top most element from the input stack. This way we have made the input smaller by 1 element.
+Now we will call the solve() method recursively on the smaller input stack ie. 4, 3, 2, 1(top to bottom). 
+Now when the stack was full ie. the stack had values 5, 4, 3, 2, 1 (top to bottom) , then the middle element that we want to delete was 3 which was the third element from the top of the stack. Hence we passed the middle element ie. 3 position from the top of the stack as the second argument to the solve() method, which in this case is 3.
+Now when we have made the input smaller by popping the top most element from the stack ie. the stack has values 4, 3, 2, 1 (top to bottom), then the middle element that we want to delete ie. 3 is now the second element from the top of the stack. Hence we pass the 3 position from the top of the stack as the second argument, which in this case is 2, to the solve() method
+in the recursive call.
+So if the position of the middle element from the top of the stack is k in the original input stack, then after we have made the input smaller by popping the top most element from the stack, the position of the middle element from the top of the stack will be k-1 in the smaller input stack. Hence we pass k-1 as the second argument to the solve() method in the recursive call.
+With each recursive call to the solve() method on the smaller input stack, we will keep on popping the top most element from the stack & making the input smaller until we reach the base condition. As we make the input smaller , the position of the middle element from the top of the stack will keep on decreasing by 1 with each recursive call to the solve() method on the smaller input stack. 
+Hence we will keep on passing k-1 as the second argument to the solve() method in the recursive call.
+
+This recursive call to the solve() method on the smaller input stack will return us a stack with the middle element removed from the smaller input stack. Hence the recursive call to the solve() method with smaller input stack ie. 4, 3, 2, 1 (top to bottom) will return us a stack with the middle element removed from this smaller input stack. 
+The middle element in this smaller input stack is the second element from the top of the stack which is the element 3. Hence the recursive call to the solve() method on this smaller input stack will return us a stack with the element 3 removed from it ie. 4, 2, 1 (top to bottom).
+
+
+
+6:20
 
 
 */
