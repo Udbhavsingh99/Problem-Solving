@@ -71,7 +71,7 @@ The middle element in this smaller input stack is the second element from the to
 
 
 
-6:20
+7:24
 
 
 */
