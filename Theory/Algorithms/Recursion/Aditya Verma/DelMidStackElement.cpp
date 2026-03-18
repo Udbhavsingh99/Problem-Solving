@@ -118,7 +118,19 @@ input stack ie. solve(s, k-1) as k-1 is now the position of the middle element t
 Induction step - 
 In the induction step we will push the top most element that we had stored in a variable (to make the input stack smaller) back to the stack with the middle element removed from it to get the final output stack with the middle element removed from the original input stack.
 
-11:50
+Code - 
+Lets say we are provided a method that will return us a stack of integers after deleting the middle element from the input stack.
+We pass the input stack & the size of the stack as argument to this method ie. midDel(stack <int> s, int n)
+We will be returning this stack after deleting the middle element from it. 
+
+If the stack is empty , then it won't have a middle element. So if s.size() == 0 , then we will return this stack as it is without doing anything to it.
+
+if(s.size() == 0) {
+    return s;
+}
+
+If the stack is not empty , then we will call the solve() method.
+12:38
 
 
 */
