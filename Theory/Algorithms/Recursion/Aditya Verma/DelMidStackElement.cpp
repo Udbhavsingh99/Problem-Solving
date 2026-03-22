@@ -129,8 +129,21 @@ if(s.size() == 0) {
     return s;
 }
 
-If the stack is not empty , then we will call the solve() method.
-12:38
+If the stack is not empty , then we will call the solve() method. We will pass the input stack & the position of the middle element from the top of the stack ie. k as arguments to this solve() method.
+Now in order to pass the value of k ie. the position of the middle element from the top of the stack as an argument to the solve() method , we first need to calculate the value of k.
+In order to get the value of k , we will use the formula n/2 + 1 ie. size/2 + 1 , where n is the number of elements in the stack. Hence we will calculate the value of k as n/2 + 1 & then we will pass this value of k as the second argument to the solve() method.
+
+After the solve() method with the input stack s & the value of k ar argument is called & executed successfully, it will return us a stack with the middle element removed from the original input stack. Hence we will return this stack as the output of the midDel() method.
+
+Now in the solve() method we will pass the input stack from which we want to delete the middle element as reference (so that any changes made to the stack inside the solve() method are reflected in the original stack ie. if we delete anything from the stack inside this 
+solve() method then that will be reflected in the original stack as well) as the first argument & the position of the middle element from the top of the stack ie. k as the second argument. 
+
+Now we defined the base condition for the solve() method as if k becomes 1 then we will pop the top most element from the stack to remove the middle element from the input stack & then we will return this stack with the middle element removed from it.
+With each recursive call to the solve() method on the smaller input stack, the value of k keeps on decreasing by 1. 
+
+
+
+13:52
 
 
 */
