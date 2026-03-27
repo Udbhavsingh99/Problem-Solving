@@ -139,7 +139,16 @@ Now in the solve() method we will pass the input stack from which we want to del
 solve() method then that will be reflected in the original stack as well) as the first argument & the position of the middle element from the top of the stack ie. k as the second argument. 
 
 Now we defined the base condition for the solve() method as if k becomes 1 then we will pop the top most element from the stack to remove the middle element from the input stack & then we will return this stack with the middle element removed from it.
-With each recursive call to the solve() method on the smaller input stack, the value of k keeps on decreasing by 1. 
+With each recursive call to the solve() method on the smaller input stack, the value of k keeps on decreasing by 1. So if the initial value of k for the given input stack is 3, then the value of k in the first recursive call to the solve() method on the smaller input stack will 
+be 2 & then in the second recursive call to the solve() method on the smaller input stack will be 1. Hence when we make the second recursive call to the solve() method on the smaller input stack, the value of k becomes 1 which is our base condition. Hence we will pop the top most 
+element from this smaller input stack to remove the middle element from this smaller input stack & then we will return this stack with the middle element removed from it.
+
+if(k == 1) {
+    s.pop();
+    return s;
+}
+
+
 
 
 
