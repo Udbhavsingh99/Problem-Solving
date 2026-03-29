@@ -149,10 +149,42 @@ if(k == 1) {
 }
 
 
+We pop the top most element from the stack & return if k == 1.
 
+If its not a base condition then we need to delete the middle element ie. kth element from the top of the stack , then we can store the top most element from the stack in a variable & then we can pop the top most element from the stack to make the input smaller. Then we can 
+call the solve() method on the smaller input stack as well as pass the k-1 (because the position of the middle element from the top will decrease by 1 in the smaller input stack) as the second argument to the solve() method in the recursive call to get a stack with the middle element removed from the smaller input stack.
 
-
-13:52
-
+We store the top most element from the stack in temp variable & then we pop the top most element from the stack to make the input smaller.
+The solve() method will return us a stack with the middle element removed from the smaller input stack. We will push the top most element that we had stored in temp variable back to this stack to get the final output stack with the middle element removed from the original input stack.
 
 */
+
+#include<iostream>
+#include<stack>
+
+using namespace std;
+
+stack<int> midDel(stack<int> s, int size) {
+    if(s.size() == 0) {
+        return s;
+    }
+
+    int k = size/2 + 1;
+
+    solve(s,k);
+    return s;
+}
+
+void solve(stack<int> &s, int k) {
+    if(k == 1) {
+        s.pop();
+        return;
+    }
+
+    int temp = s.top();
+    s.pop();
+    solve(s, k-1);
+    s.push(temp);
+
+    return;
+}
