@@ -48,9 +48,22 @@ Lets say we define a method insert() such that it takes the input stack 1, 2, 3,
 Now in the hypothesis we will make sure that the insert() method works for smaller inputs as well.
 In order to make the input stack smaller , we will first store the top element of the stack in a variable, then pop the top element of the stack & then call the insert() method on the remaining smaller stack. 
 
-We call the insert() method on the smaller input stack 2, 3, 4 (top to bottom) to insert the value 5 at the bottom of the smaller input stack 2, 3, 4 (top to bottom)
+We call the insert() method on the smaller input stack passing  2, 3, 4 (top to bottom) as the first argument and value to be inserted ie. 5 as the second argument to insert the value 5 at the bottom of the smaller 
+input stack 2, 3, 4 (top to bottom)
+
+This insert() method will insert the value 5 at the bottom of the smaller input stack 2, 3, 4 (top to bottom) to get the stack 2, 3, 4, 5 (top to bottom) as output from the insert() method.
+Now in the induction step, we will push the value that we stored in the variable (which is 1) & popped from the stack, to the top of the stack 2, 3, 4, 5 (top to bottom) to get the final stack 1, 2, 3, 4, 5 (top to bottom)
+
+3. Base Condition -
+The s
+
+
+Code - 
+We create a method insertStack() that will take the input stack as reference as the first argument & the value to be inserted at the bottom of the stack as the second argument.
 
 
 
-5:26
+
+
+7:25
 */
