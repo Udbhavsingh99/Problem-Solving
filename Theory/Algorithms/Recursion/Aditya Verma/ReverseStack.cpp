@@ -55,15 +55,22 @@ This insert() method will insert the value 5 at the bottom of the smaller input 
 Now in the induction step, we will push the value that we stored in the variable (which is 1) & popped from the stack, to the top of the stack 2, 3, 4, 5 (top to bottom) to get the final stack 1, 2, 3, 4, 5 (top to bottom)
 
 3. Base Condition -
-The s
+The stack is getting smaller with each consecutive recursive call. We will push the value to be inserted ie. the value that we removed in order to make the stack smaller at the bottom of the stack when the stack is empty.
+If we had the input stack as 1, 2, 3, 4 (top to bottom) & the value to be inserted at the bottom of the stack is 5, then we'd have to pop the values from the stack  recursively ie. we'd have to pop the values in the stack 
+one by one to make the stack empty (making the input stack smaller with each consecutive recursive call) & then we will push the value 5 to the empty stack to get the stack 5 (top to bottom) as output from the insert() method.
 
+Hence the base condition for the insert() method will be when the stack is empty, then we will push the value to be inserted at the bottom of the stack to the empty stack.
 
 Code - 
 We create a method insertStack() that will take the input stack as reference as the first argument & the value to be inserted at the bottom of the stack as the second argument.
+We check for the base condition of the insert() method ie. if the stack is empty, then we will push the value to be inserted at the bottom of the stack to the empty stack & return from the method.
+
+If the stack is not empty, then we will store the top element of the stack in a variable, then pop the top element of the stack to make the stack smaller & then call the insert() method on this.
 
 
 
 
 
-7:25
+
+8:57
 */
