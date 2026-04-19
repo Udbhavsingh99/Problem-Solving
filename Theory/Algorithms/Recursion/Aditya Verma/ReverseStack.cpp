@@ -50,7 +50,7 @@ In order to make the input stack smaller , we will first store the top element o
 
 We call the insert() method on the smaller input stack passing  2, 3, 4 (top to bottom) as the first argument and value to be inserted ie. 5 as the second argument to insert the value 5 at the bottom of the smaller 
 input stack 2, 3, 4 (top to bottom)
-
+  
 This insert() method will insert the value 5 at the bottom of the smaller input stack 2, 3, 4 (top to bottom) to get the stack 2, 3, 4, 5 (top to bottom) as output from the insert() method.
 Now in the induction step, we will push the value that we stored in the variable (which is 1) & popped from the stack, to the top of the stack 2, 3, 4, 5 (top to bottom) to get the final stack 1, 2, 3, 4, 5 (top to bottom)
 
@@ -66,11 +66,16 @@ We create a method insertStack() that will take the input stack as reference as 
 We check for the base condition of the insert() method ie. if the stack is empty, then we will push the value to be inserted at the bottom of the stack to the empty stack & return from the method.
 
 If the stack is not empty, then we will store the top element of the stack in a variable, then pop the top element of the stack to make the stack smaller & then call the insert() method on this.
+Now we will have to insert the value 5 in a smaller stack with the top most element removed hence we will call the insert() method on the smaller stack passing the smaller stack as the first argument & the value to be inserted 
+as the second argument to insert the value 5 at the bottom of the smaller stack.
+
+Earlier we called the insert() method on the complete stack ie. 1, 2, 3, 4 (top to bottom) to insert the value 5 at the bottom of the complete stack, now we are calling the insert() method on the smaller stack ie. 2, 3, 4 (top to bottom)
+to insert the value 5 at the bottom of the smaller stack. This will return the stack 2, 3, 4, 5 (top to bottom) as output from the insert() method.
+
+So the initial input stack had values 1, 2, 3, 4 (top to bottom) & the value to be inserted at the bottom of the stack was 5, we stored the top most element of the input stack  in a temp variable which is 1 & then we popped the top element
+of the input stack to make the input stack smaller & then we called the insert() method on the smaller stack ie. 2, 3, 4 (top to bottom) to insert the value 5 at the bottom of the smaller stack. 
+This will return the stack 2, 3, 4, 5 (top to bottom) as output from the insert() method. 
 
 
-
-
-
-
-8:57
+9:27
 */
