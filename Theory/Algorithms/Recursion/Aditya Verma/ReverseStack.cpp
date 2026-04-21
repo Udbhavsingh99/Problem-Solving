@@ -76,6 +76,12 @@ So the initial input stack had values 1, 2, 3, 4 (top to bottom) & the value to 
 of the input stack to make the input stack smaller & then we called the insert() method on the smaller stack ie. 2, 3, 4 (top to bottom) to insert the value 5 at the bottom of the smaller stack. 
 This will return the stack 2, 3, 4, 5 (top to bottom) as output from the insert() method. 
 
+Now we just have to insert the 1 that we stored in the temp variable back to the top of the stack 2, 3, 4, 5 (top to bottom) to get the final stack 1, 2, 3, 4, 5 (top to bottom) as output from the insert() method.
+So we push this 1 back on the stack.
 
-9:27
+Now our hypothesis is ready. 
+The original problem stated 
+
+
+10:13
 */
