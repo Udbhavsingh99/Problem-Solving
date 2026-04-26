@@ -80,8 +80,21 @@ Now we just have to insert the 1 that we stored in the temp variable back to the
 So we push this 1 back on the stack.
 
 Now our hypothesis is ready. 
-The original problem stated 
+The original problem stated that we want to reverse the input stack. If we are given input stack 1, 2, 3, 4, 5 (top to bottom) & we pass it to the reverse() method, then this method will return the reversed stack 5, 4, 3, 2, 1 (top to bottom)
+as output from the reverse() method.
+So we store the top most element in the input stack ie. 1 in a temp variable , then we pass the remaining stack to the reverse method ie. we pass 2, 3, 4, 5 (top to bottom) to the reverse() method. The reverse() method will then return use the 
+reversed stack ie. 5, 4, 3, 2 (top to bottom) 
+
+Now we need to insert the top most element that we removed & stored in variable temp , back at the bottom of the stack returned by call to reverse() method ie. 5, 4, 3, 2 (top to bottom) ,  we do this using the insert() method. 
+
+We need to find out & deciede the base condition for the reverse() method. 
+If our input stack is empty, then we don't have to reverse anything. We can use a null check in the main() method itself. 
+If we get an empty input stack ie. input stack with no values , then in that scenario we check the size of the input stack & if its 0 ie. empty , then we return the stack as it is.
+
+If we are given input stack as 1, 2, 3 (top to bottom) then the reverse() method will reverse the order of the stack & return us 3, 2, 1 (top to bottom)
+Now if we store the top element in a temp variable & pop it from the input stack ie. we store the value 1 in a temp variable & pop it from the stack, in order to make the input stack smaller , then we pass the smaller stack ie. 2, 3 (top to bottom) 
+to the reverse method which returns us the reversed stack ie. 3, 2 (top to bottom)
 
 
-10:13
+11:50
 */
