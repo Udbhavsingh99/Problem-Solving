@@ -94,7 +94,15 @@ If we get an empty input stack ie. input stack with no values , then in that sce
 If we are given input stack as 1, 2, 3 (top to bottom) then the reverse() method will reverse the order of the stack & return us 3, 2, 1 (top to bottom)
 Now if we store the top element in a temp variable & pop it from the input stack ie. we store the value 1 in a temp variable & pop it from the stack, in order to make the input stack smaller , then we pass the smaller stack ie. 2, 3 (top to bottom) 
 to the reverse method which returns us the reversed stack ie. 3, 2 (top to bottom)
+Now if we again store the top element of the smaller stack in a temp variable & pop it from the smaller stack ie. we store the value 2 in a temp variable & pop it from the stack, in order to make the smaller stack even smaller , then we pass the even smaller stack ie. 3 (top to bottom)
+to the reverse method which returns us the reversed stack ie. 3 (top to bottom)
+This is because a single element stack is increasing, decreasing , sorted & reversed at the same time.
+
+So, now we have the base condition for the reverse() method as well. The base condition for the reverse() method will be when the input stack has only one element, then we will return the stack as it is because a single element stack is increasing, decreasing , sorted & reversed at the 
+same time. 
+
+Code -
 
 
-11:50
+12:40
 */
