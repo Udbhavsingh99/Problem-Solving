@@ -102,7 +102,15 @@ So, now we have the base condition for the reverse() method as well. The base co
 same time. 
 
 Code -
+We create a method reverse() that takes in reference to stack as input. We check for the base condition of the reverse() method ie. if the size of the input stack is 1, then we will just return.    
+If the size of the input stack is greater than 1, then we will store the top element of the input stack in a temp variable, then pop the top element of the input stack to make the input stack smaller & then call the reverse() method on this smaller stack.
+If the input stack is 5, 4, 3, 2, 1 (top to bottom), then we will store the top element of the input stack in a temp variable which is 5, then we will pop the top element of the input stack to make the input stack smaller which will give us 4, 3, 2, 1 (top to bottom) as the smaller stack & then we will call the reverse() method on this smaller stack.
+Now this reverse() method call will return us the smaller input stack ie. 4, 3, 2, 1 (top to bottom) in reverse order ie. 1, 2, 3, 4 (top to bottom) as output from the reverse() method.
 
+We now need to insert the value that we stored in the temp variable ie. 5 at the bottom of the stack returned by the call to reverse() method ie. 1, 2, 3, 4 (top to bottom) , we do this using the insert() method.
+We make a call to the insert() method passing the stack returned by the call to reverse() method ie. 1, 2, 3, 4 (top to bottom) as the first argument & the value to be inserted at the bottom of the stack ie. 5 which we stored in the temp variable as the second argument to insert the value 5 at the bottom of the stack returned by the call to reverse() method.
 
-12:40
+insert() method itself is a recursive method. 
+
+13:44
 */
