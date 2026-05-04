@@ -111,9 +111,26 @@ We do this for all the nodes in the trees & if we get the final value as 1 then 
 We also check the values at the present nodes as well. If the values at the present nodes are different in both the trees then we return 0 without checking for the left & right subtree of that particular node. 
 If the values at the present nodes are same in both the trees then we check for the left & right subtree of that particular node.
 
+In order to check for equality of 2 given binary trees , we first compare the value at the present node in both the trees. If the values at the present nodes are different in both the trees then we return 0 without checking for the left & right subtree of that 
+particular node. If the values at the present nodes are same in both the trees then we check for the left & right subtree of that particular node. We take the AND operation ie. && between the values returned by the left & right subtree of a particular node & then 
+return the resultant of this AND operation to the parent node of that particular node.
+
+Lets say we are given trees - 
+
+    Tree 1                            Tree 2
+        1                                1
+     /    \                           /    \
+    2      3                         2      3
+   /                                  \ 
+  4                                    4
+
+then we start with the root node ie. node with value 1. As both tree 1 & tree 2 have the same value for the root node ie. 1 , then we start with the left subtree traversal for the root node.
+We then traverse the left child node of the root node ie. node with value 1 for both tree 1 & tree 2 which is node with value 2 for both tree 1 & tree 2. As the left child nodes for the root node ie. node with value 1 are same ie. node with value 2. Then the left & right subtree for the node with value 2 should have all the values same.
+Then we traverse the left subtree for the node with value 2 for both tree 1 & tree 2.
+Now the left subtree ie. the left child node for the node with value 2 is node with value 4 for tree 1. Whereas the left subtree ie. the left child node for the node with value 2 is NULL for tree 2. As the left child node for the node with value 2 is different in tree 1 & tree 2 , then we return 0 without checking for the right subtree of node with value 2.
 
 
-9:46
+10:41
 
 
 */
