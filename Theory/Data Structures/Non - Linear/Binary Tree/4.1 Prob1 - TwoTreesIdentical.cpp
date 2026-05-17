@@ -169,11 +169,6 @@ Time Complexity: O(N) where N is the number of nodes in the tree. We are travers
 Space Complexity: O(H) where H is the height of the tree. This space is required for the recursive stack space. In the worst case when the tree is skewed then H can be equal to N & hence in the worst case space complexity can be O(N). 
 In the best case when the tree is complete or full then H can be equal to logN & hence in the best case space complexity can be O(logN).
 
-
-
-18:45
-
-
 */
 
 #include <iostream>
@@ -201,7 +196,7 @@ bool isIdentical(Node *r1, Node *r2)
 
     if((!r1 && r2) || (r1 && !r2))
         return 0;
-        
+
     if(r1->data != r2->data)
         return 0;
 
