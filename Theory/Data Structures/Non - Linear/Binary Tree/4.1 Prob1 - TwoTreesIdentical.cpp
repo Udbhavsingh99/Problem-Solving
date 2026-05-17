@@ -128,9 +128,82 @@ then we start with the root node ie. node with value 1. As both tree 1 & tree 2 
 We then traverse the left child node of the root node ie. node with value 1 for both tree 1 & tree 2 which is node with value 2 for both tree 1 & tree 2. As the left child nodes for the root node ie. node with value 1 are same ie. node with value 2. Then the left & right subtree for the node with value 2 should have all the values same.
 Then we traverse the left subtree for the node with value 2 for both tree 1 & tree 2.
 Now the left subtree ie. the left child node for the node with value 2 is node with value 4 for tree 1. Whereas the left subtree ie. the left child node for the node with value 2 is NULL for tree 2. As the left child node for the node with value 2 is different in tree 1 & tree 2 , then we return 0 without checking for the right subtree of node with value 2.
+We don't check for the right subtree of node with value 2 because the left subtree ie. left child node for the node with value 2 returns 0 & hence the value returned by the left subtree of node with value 2 is 0. Now we take the AND operation between the value returned by the left subtree of node with value 2 ie. 0 & the value returned by the right subtree of node with value 2.
+Now  irrespective of the value returned by the right subtree ie. right child node of the node with value 2, as its an AND operation ie. && , the resultant of the AND operation will be 0 && R which is equal to 0. Hence we return 0 to the parent node of node with value 2 ie. the root node ie. node with value 1.
+This is why once we get 0 for the left subtree ie. the left chile node of the current node ,  we don't check for the right subtree ie. the right child node of the current node because the resultant of the AND operation will be 0 irrespective of the value returned by the right subtree ie. right child node of the current node.
+
+We write a method isIdentical which takes the root node of both the trees as input parameters & returns true if both the trees are identical else returns false.
+Our first base condition is that both root nodes ie. r1 & r2 are NULL. In this scenario again both the trees are identical as both the trees are empty. Hence we return true ie. 1 in this case.
+The second condition is that if any one of the trees ie. either r1 or r2 is NULL but the other tree is not NULL then in that case both the trees are not identical as one tree is empty & the other tree is not empty. Hence we return false ie. 0 in this case.
+Now we check whether the data stored in the root node ie. the node being pointed by r1 in tree 1 is equal to the data stored in the root node ie. the node being pointed by r2 in tree 2. If the data stored in the root node of tree 1 is not equal to the data stored in the root node of tree 2 then in that case both the trees are not identical & hence we return false ie. 0 in this case.
+If the data stored in the root node of tree 1 is equal to the data stored in the root node of tree 2 then in that case we check for the left subtree of the root node & the right subtree of the root node. We take the AND operation between the value returned by the left subtree of the root node & the value returned by the right subtree of the root node & return this value to the root node.
+We do this by taking AND ie. && operation between the recursive call to the isIdentical() method for the left subtree of the root node & the recursive call to the isIdentical() method for the right subtree of the root node.
+If both are identical then we return 1 , else we return 0. 
+We pass the left child node of root nodes of both the trees as input parameters to the recursive call to the isIdentical() method for the left subtree of the root node & we pass the right child node of root nodes of both the trees as input parameters to the recursive call to the isIdentical() method for the right subtree of the root node. We use AND ie. && operation between them
+because if the value returned by any one of the left or right subtree ie. left or right child node is 0 then the resultant of the AND operation will be 0 & hence we can return 0 without checking for any further nodes in the tree. If both the left & right subtree ie. left & right child node return 1 then the resultant of the AND operation will be 1 & hence we can return 1 to the parent node of the root node.
+Now the possible conditions for the root nodes of tree 1 & tree 2 ie. r1 & r2 are -
+r1                r2
+NULL              NULL
+NULL              Node
+Node              NULL
+Node              Node
+
+All above conditions are handled in the code. 
+
+Pseudocode :
+bool isIdentical(Node *r1, Node *r2)
+{
+    if(r1 == NULL && r2 == NULL) 
+        return 1;
+    
+    if((!r1 && r2) || (r1 && !r2)) 
+        return 0;
+    
+    if(r1->data != r2->data)
+        return 0;
+    
+    return isIdentical(r1->left, r2->left) && isIdentical(r1->right, r2->right);
+}
+
+Time Complexity: O(N) where N is the number of nodes in the tree. We are traversing all the nodes in the tree once.
+Space Complexity: O(H) where H is the height of the tree. This space is required for the recursive stack space. In the worst case when the tree is skewed then H can be equal to N & hence in the worst case space complexity can be O(N). 
+In the best case when the tree is complete or full then H can be equal to logN & hence in the best case space complexity can be O(logN).
 
 
-10:41
+
+18:45
 
 
 */
+
+#include <iostream>
+
+using namespace std;
+
+class Node 
+{
+    public: 
+    int data;
+    Node * left;
+    Node * right;
+    Node(int val)
+    {
+        data = val;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+bool isIdentical(Node *r1, Node *r2)
+{
+    if( !r1 && !r2)
+        return 1;
+
+    if((!r1 && r2) || (r1 && !r2))
+        return 0;
+        
+    if(r1->data != r2->data)
+        return 0;
+
+    return isIdentical(r1->left, r2->left) && isIdentical(r1->right, r2->right);
+}
