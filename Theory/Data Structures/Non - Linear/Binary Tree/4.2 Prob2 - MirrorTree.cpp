@@ -75,7 +75,7 @@ ie. node with value 1.
 We have now completed swapping/flipping the child nodes of the node with value 1 ie. we have completed swapping/flipping the nodes in the left subtree of the node with value 1. Hence 
 we now need to swap/flip the nodes in the right subtree ie. right child nodes of the node with value 1 ie. the root node.
 
-
+Hence we move to the right subtree ie. right child node of the node with value 1 ie. the node with value 2. We
 
 
 */
